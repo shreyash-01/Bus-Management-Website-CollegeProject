@@ -1,0 +1,190 @@
+body{
+  overflow-x: hidden;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-image:  repeating-linear-gradient(15deg, #080707 ,#747272 20%)
+}
+.top{
+    background-image:linear-gradient(to right,#060606,#595252);
+    height:100px;
+    width:100%;
+    top: 0px;
+    position: absolute;
+    z-index: 9999;
+}
+.hb{
+    font-family: 'Dancing Script', cursive;
+    color:aliceblue;
+    font-size: 40px;
+    position: absolute;
+    top:20px;
+    left:10px;
+}
+.hb a{
+    text-decoration: none;
+    color:aliceblue;
+
+
+}
+.buttons{
+  position: relative;
+  top:15px;
+
+}
+.buttons a{
+  text-decoration: none;
+}
+
+.about{
+  position: absolute;
+    height:50px;
+    width: 140px;
+    text-align: center;
+    left:500px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    padding-top: 30px;
+}
+.about:hover{
+  background-color: #0d0c0c;
+}
+
+
+
+
+.busroute{
+    position: absolute;
+    height:50px;
+    width:140px;
+    font-size: 20px;
+    left:640px;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 30px;
+}
+.busroute:hover{
+  background-color: #0d0c0c;
+}
+
+
+
+
+
+
+
+.login{
+    height:40px;
+    background-image: linear-gradient(to left,#8a5050,#5e0d1a,#2e2123 80%);
+    background-size:300%;
+    transition: background-position 1s;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 140px;
+    position: absolute;
+    left:1200px;
+    top:20px;
+    cursor:pointer;
+    border-radius: 5px;
+    border-width: 0px;
+
+}
+.login:hover{
+  background-position: right;
+}
+
+
+
+
+.signup{
+
+  position: absolute;
+  top:200px;
+  background-color: aliceblue;
+  height:550px;
+  width:800px;
+  border:1px solid black;
+  left:300px;
+  text-align:center;
+  border-radius: 40px;
+}
+.details{
+  font-family: 'Ubuntu',cursive;
+  font-size: 30px;
+}
+
+.name{
+  display:none;
+  position:relative;
+  top:10px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  height:0px;
+  width:0px;
+}
+.age{
+  display:none;
+  position:relative;
+  top:10px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  height:0px;
+  width:0px
+}
+
+.gender{
+  display:none;
+  position:relative;
+  top:10px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  height:0px;
+  width:0px
+}
+.phone{
+  display:none;
+  position:relative;
+  top:10px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  height:0px;
+  width:0px
+}
+.email{
+  display:none;
+  position:relative;
+  top:10px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  height:0px;
+  width:0px
+}
+
+.password{
+  display:none;
+  position:relative;
+  top:10px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  height:0px;
+  width:0px
+}
+
+.submit{
+  position: absolute;
+  top:500px;
+  left:350px;
+  height:40px;
+  width:80px;
+  font-family: 'Ubuntu',cursive;
+  border-radius: 10px;
+  background-image: linear-gradient(0deg, #080707,#857d7d);
+  cursor: pointer;
+  color:white;
+}
+.submit:hover{
+  background-image: linear-gradient(180deg, #080707,#857d7d);
+
+}
