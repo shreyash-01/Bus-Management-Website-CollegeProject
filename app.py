@@ -13,6 +13,16 @@ def user_account():
     return "this is account page"
 
 
+@app.route('/login')
+def login_account():
+    return render_template("login.html")
+
+
+@app.route('/signup')
+def signup_account():
+    return render_template("signup.html")
+
+
 @app.route('/dashboard')
 def dashboard_page():
     return "this is dashboard"
