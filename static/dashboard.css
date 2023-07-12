@@ -81,6 +81,7 @@ body {
   border-width: 0;
   font-size: 1.25rem; /* 20px */
   color: white;
+  font-family: 'Ubuntu', cursive;
 }
 
 .usersbutton:hover {
@@ -118,6 +119,7 @@ body {
   border-width: 0;
   font-size: 1.25rem; /* 20px */
   color: white;
+  font-family: 'Ubuntu', cursive;
 }
 
 .editbsbutton:hover {
@@ -155,6 +157,7 @@ body {
   border-width: 0;
   font-size: 1.25rem; /* 20px */
   color: white;
+  font-family: 'Ubuntu', cursive;
 }
 
 .employeebutton:hover {
