@@ -1,120 +1,162 @@
-body{
+body {
   overflow-x: hidden;
-  margin-left: 0px;
-  margin-right: 0px;
-  background-image:  repeating-linear-gradient(15deg, #080707 ,#747272 20%)
+  margin-left: 0;
+  margin-right: 0;
+  background-image: repeating-linear-gradient(15deg, #080707, #747272 20%);
 }
-.top{
-    background-image:linear-gradient(to right,#060606,#595252);
-    height:100px;
-    width:100%;
-    top: 0px;
-    position: absolute;
-    z-index: 9999;
-}
-.hb{
-    font-family: 'Dancing Script', cursive;
-    color:aliceblue;
-    font-size: 40px;
-    position: absolute;
-    top:20px;
-    left:10px;
-}
-.hb a{
-    text-decoration: none;
-    color:aliceblue;
 
+.top {
+  background-image: linear-gradient(to right, #060606, #595252);
+  height: 6.25rem; /* 100px */
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 9999;
+}
 
-}
-.heading{
+.hb {
+  font-family: 'Dancing Script', cursive;
+  color: aliceblue;
+  font-size: 2.5rem; /* 40px */
   position: absolute;
-  font-family: 'Ubuntu',cursive;
-  color:white;
-  font-size: 30px;
-  left:600px;
+  top: 1.25rem; /* 20px */
+  left: 0.625rem; /* 10px */
 }
-.content{
+
+.hb a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.heading {
   position: absolute;
-  top:200px;
+  font-family: 'Ubuntu', cursive;
+  color: white;
+  font-size: 1.875rem; /* 30px */
+  left: 37.5rem; /* 600px */
+}
+
+.content {
+  position: absolute;
+  top: 12.5rem; /* 200px */
   background-color: aliceblue;
-  height:600px;
-  width:800px;
-  border:1px solid black;
-  left:300px;
-  text-align:center;
-  border-radius: 40px;
+  height: 60rem; /* 600px */
+  width: 50rem; /* 800px */
+  border: 0.0625rem solid black; /* 1px */
+  left: 18.75rem; /* 300px */
+  text-align: center;
+  border-radius: 2.5rem; /* 40px */
   align-items: center;
 }
 
-.users{
+.users {
   position: absolute;
-  top:200px;
+  top: 12.5rem; /* 200px */
   background-color: aliceblue;
-  height:250px;
-  width:600px;
-  border:1px solid black;
-  top:20px;
-  left:80px;
-  text-align:center;
-  border-radius: 40px;
-
+  height: 15.625rem; /* 250px */
+  width: 37.5rem; /* 600px */
+  border: 0.0625rem solid black; /* 1px */
+  top: 1.25rem; /* 20px */
+  left: 5rem; /* 80px */
+  text-align: center;
+  border-radius: 2.5rem; /* 40px */
 }
 
-.userstext{
-  font-family: 'Ubuntu',cursive;
-  font-size:25px;
+.userstext {
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.5625rem; /* 25px */
 }
-.usersbutton{
-    position: absolute;
-    height:60px;
-    border-radius: 10px;
-    width:120px;
-    background-image: linear-gradient(45deg, #132b39, #18436a,#4758a2,#1f2230);
-    background-size:300%;
-    left:225px;
-    top:150px;
-    transition: background-position 1s;
-    cursor: pointer;
-    border-width: 0px;
-    font-size: 20px;
-    color:white;
+
+.usersbutton {
+  position: absolute;
+  height: 3.75rem; /* 60px */
+  border-radius: 1rem; /* 10px */
+  width: 7.5rem; /* 120px */
+  background-image: linear-gradient(45deg, #132b39, #18436a, #4758a2, #1f2230);
+  background-size: 300%;
+  left: 14.0625rem; /* 225px */
+  top: 9.375rem; /* 150px */
+  transition: background-position 1s;
+  cursor: pointer;
+  border-width: 0;
+  font-size: 1.25rem; /* 20px */
+  color: white;
 }
-.usersbutton:hover{
+
+.usersbutton:hover {
   background-position: right;
 }
 
-.editbs{
+.editbs {
   position: relative;
   background-color: aliceblue;
-  height:250px;
-  width:600px;
-  border:1px solid black;
-  top:320px;
-  left:80px;
-  text-align:center;
-  border-radius: 40px;
+  height: 15.625rem; /* 250px */
+  width: 37.5rem; /* 600px */
+  border: 0.0625rem solid black; /* 1px */
+  top: 20rem; /* 320px */
+  left: 5rem; /* 80px */
+  text-align: center;
+  border-radius: 2.5rem; /* 40px */
+}
 
+.editbstext {
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.5625rem; /* 25px */
 }
-.editbstext{
-  font-family: 'Ubuntu',cursive;
-  font-size:25px;
 
+.editbsbutton {
+  position: absolute;
+  height: 3.75rem; /* 60px */
+  border-radius: 1rem; /* 10px */
+  width: 7.5rem; /* 120px */
+  background-image: linear-gradient(45deg, #132b39, #18436a, #4758a2, #1f2230);
+  background-size: 300%;
+  left: 14.0625rem; /* 225px */
+  top: 9.375rem; /* 150px */
+  transition: background-position 1s;
+  cursor: pointer;
+  border-width: 0;
+  font-size: 1.25rem; /* 20px */
+  color: white;
 }
-.editbsbutton{
-    position: absolute;
-    height:60px;
-    border-radius: 10px;
-    width:120px;
-    background-image: linear-gradient(45deg, #132b39, #18436a,#4758a2,#1f2230);
-    background-size:300%;
-    left:225px;
-    top:150px;
-    transition: background-position 1s;
-    cursor: pointer;
-    border-width: 0px;
-    font-size: 20px;
-    color:white;
+
+.editbsbutton:hover {
+  background-position: right;
 }
-.editbsbutton:hover{
+
+.employee {
+  position: relative;
+  background-color: aliceblue;
+  height: 15.625rem; /* 250px */
+  width: 37.5rem; /* 600px */
+  border: 0.0625rem solid black; /* 1px */
+  top: 20rem; /* 320px */
+  left: 5rem; /* 80px */
+  text-align: center;
+  border-radius: 2.5rem; /* 40px */
+}
+
+.employeetext {
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.5625rem; /* 25px */
+}
+
+.employeebutton {
+  position: absolute;
+  height: 3.75rem; /* 60px */
+  border-radius: 1rem; /* 10px */
+  width: 7.5rem; /* 120px */
+  background-image: linear-gradient(45deg, #132b39, #18436a, #4758a2, #1f2230);
+  background-size: 300%;
+  left: 14.0625rem; /* 225px */
+  top: 9.375rem; /* 150px */
+  transition: background-position 1s;
+  cursor: pointer;
+  border-width: 0;
+  font-size: 1.25rem; /* 20px */
+  color: white;
+}
+
+.employeebutton:hover {
   background-position: right;
 }

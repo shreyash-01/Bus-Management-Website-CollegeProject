@@ -21,34 +21,34 @@
     </div>
 
     <div class="content">
-        <div class="busno">
-            <ul>
-                <li></li>
-            </ul>
-        </div>
-    
-    <div class="busname">
-        <ul>
-            <li></li>
-        </ul>
-    </div>
-
-        <div class="eno">
-            <ul>
-                <li><a href=""></a></li>
-            </ul>
-        </div>
-        <div class="routeno">
-            <ul>
-                <li><a href=""></a></li>
-            </ul>
-        </div>
+        <table cellspacing="0px">
+            <tr><th>Bus Number</th><th>Bus Name</th>
+              <th>ENumber</th><th>Route Number</th>
+            </tr>
+           
+           
+            <tbody class="rows">
+            <a href="">
+            <tr>
+              <!-- Example Values -->
+              <td>001</td> <!-- ENo. -->
+              <td>Volvo</td> <!-- EName -->
+              <td>0056</td> <!-- EAge-->
+              <td>901</td> <!-- EPhone -->
+            </tr>
+            </a>
+          </tbody>
+          
+          
+          </table>
         <br><br><br>
+        
 
         <button type="submit" class="enter">Enter New Bus</button>
+    </div>
 
         <div class="popup">
-            <h2 class="heading2">Enter New Bus Details</h2>
+            <h2 class="heading2">Enter New Bus Details</h2><br>
             <form id="detailsForm">
               
               <input type="text" placeholder="Bus Number" id="busnumber" required>

@@ -1,262 +1,211 @@
-body{
-  overflow-x: hidden;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-.top{
-    background-image:linear-gradient(to right,#060606,#595252);
-    height:100px;
-    width:100%;
-    top: 0px;
+body {
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .top {
+    background-image: linear-gradient(to right, #060606, #595252);
+    height: 6.25rem; /* 100px */
+    width: 100%;
+    top: 0;
     position: absolute;
     z-index: 9999;
-}
-.hb{
+  }
+  
+  .hb {
     font-family: 'Dancing Script', cursive;
-    color:aliceblue;
-    font-size: 40px;
+    color: aliceblue;
+    font-size: 2.5rem; /* 40px */
     position: absolute;
-    top:20px;
-    left:10px;
-}
-.hb a{
+    top: 1.25rem; /* 20px */
+    left: 0.625rem; /* 10px */
+  }
+  
+  .hb a {
     text-decoration: none;
-    color:aliceblue;
-
-
-}
-.buttons{
-  position: relative;
-
-}
-.buttons a{
-  text-decoration: none;
-}
-
-.about{
-  position: absolute;
-    height:50px;
-    width: 140px;
-    text-align: center;
-    left:500px;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
     color: aliceblue;
-    padding-top: 30px;
-}
-.about:hover{
-  background-color: #0d0c0c;
-}
-
-
-
-
-.busroute{
-    position: absolute;
-    height:50px;
-    width:140px;
-    font-size: 20px;
-    left:640px;
-    font-family: 'Times New Roman', Times, serif;
-    color: aliceblue;
-    text-align: center;
-    padding-top: 30px;
-}
-.busroute:hover{
-  background-color: #0d0c0c;
-}
-
-
-
-
-
-
-
-.login{
-    height:40px;
-    background-image: linear-gradient(to left,#8a5050,#5e0d1a,#2e2123 80%);
-    background-size:300%;
-    transition: background-position 1s;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: aliceblue;
-    width: 140px;
-    position: absolute;
-    left:1200px;
-    top:20px;
-    cursor:pointer;
-    border-radius: 5px;
-    border-width: 0px;
-
-}
-.login:hover{
-  background-position: right;
-
-
-}
-.signup{
-    height:40px;
-    background-image: linear-gradient(to left,#8a5050,#5e0d1a,#2e2123 80%);
-    background-size:300%;
-    transition: background-position 1s;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: aliceblue;
-    width: 140px;
-    position: absolute;
-    left:1350px;
-    top:20px;
-    cursor:pointer;
-    border-radius: 5px;
-    border-width: 0px;
-}
-
-.signup:hover{
-  background-position: right;
-}
-
-
-
-
-
-
-
-.first{
+  }
+  
+  .buttons {
     position: relative;
-    top:80px;
-
-    height:500px;
-
-
-
-}
-.img1{
-    height: 500px;
-    width:50%;
-    float:left;
-}
-.firsttext{
-    font-size: 60px;
+    top: 0.9375rem; /* 15px */
+  }
+  
+  .buttons a {
+    text-decoration: none;
+  }
+  
+  .about {
+    position: absolute;
+    height: 3.125rem; /* 50px */
+    width: 8.75rem; /* 140px */
+    text-align: center;
+    left: 31.25rem; /* 500px */
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    padding-top: 1.875rem; /* 30px */
+  }
+  
+  .about:hover {
+    background-color: #0d0c0c;
+  }
+  
+  .busroute {
+    position: absolute;
+    height: 3.125rem; /* 50px */
+    width: 8.75rem; /* 140px */
+    font-size: 1.25rem; /* 20px */
+    left: 40rem; /* 640px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 1.875rem; /* 30px */
+  }
+  
+  .busroute:hover {
+    background-color: #0d0c0c;
+  }
+  
+  .login {
+    height: 2.5rem; /* 40px */
+    background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+    background-size: 300%;
+    transition: background-position 1s;
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 8.75rem; /* 140px */
+    position: absolute;
+    left: 75rem; /* 1200px */
+    top: 1.25rem; /* 20px */
+    cursor: pointer;
+    border-radius: 0.3125rem; /* 5px */
+    border-width: 0;
+  }
+  
+  .login:hover {
+    background-position: right;
+  }
+  
+  .signup {
+    height: 2.5rem; /* 40px */
+    background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+    background-size: 300%;
+    transition: background-position 1s;
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 8.75rem; /* 140px */
+    position: absolute;
+    left: 84.375rem; /* 1350px */
+    top: 1.25rem; /* 20px */
+    cursor: pointer;
+    border-radius: 0.3125rem; /* 5px */
+    border-width: 0;
+  }
+  
+  .signup:hover {
+    background-position: right;
+  }
+  
+  .first {
+    position: relative;
+    top: 5rem; /* 80px */
+    height: 31.25rem; /* 500px */
+  }
+  
+  .img1 {
+    height: 31.25rem; /* 500px */
+    width: 50%;
+    float: left;
+  }
+  
+  .firsttext {
+    font-size: 3.75rem; /* 60px */
     font-family: 'Pacifico', cursive;
-
-}
-
-
-.second{
-    background-image:linear-gradient(to top, white,#0a0a0a 20% 70%,white);
-    background-size:500%;
+  }
+  
+  .second {
+    background-image: linear-gradient(to top, white, #0a0a0a 20% 70%, white);
+    background-size: 500%;
     position: relative;
-    top: 50px;
-    height: 650px;
-}
-
-
-.contactus{
-    padding: 50px;
+    top: 3.125rem; /* 50px */
+    height: 40.625rem; /* 650px */
+  }
+  
+  .contactus {
+    padding: 3.125rem; /* 50px */
     background-color: aliceblue;
-    border-radius: 30px;
+    border-radius: 1.875rem; /* 30px */
     position: relative;
-    top:40px;
-    border:2px solid black;
-    width:50%;
-    left:20%;
-
-    height:400px;
-}
-.text3{
-    font-size: 30px;
+    top: 2.5rem; /* 40px */
+    border: 0.125rem solid black; /* 2px */
+    width: 50rem; /* 500px */
+    left: 15rem; /* 100px */
+    height: 25rem; /* 400px */
+    text-align: center;
+  }
+  
+  .text3 {
+    font-size: 1.875rem; /* 30px */
     position: absolute;
-    top:0px;
-    font-family:'Ubuntu', cursive;
-}
-
-.forms{
+    top: 0;
+    font-family: 'Ubuntu', cursive;
+  }
+  
+  .forms {
     position: absolute;
-    top:150px;
-
-}
-.name{
+    top: 9.375rem; /* 150px */
+  }
+  
+  .name {
     position: absolute;
-    border-radius: 5px;
-    height:30px;
-    width:500px;
-    left:100px;
-}
-.number{
+    border-radius: 0.3125rem; /* 5px */
+    height: 1.875rem; /* 30px */
+    width: 31.25rem; /* 500px */
+    left: 6.25rem; /* 100px */
+  }
+  
+  .number {
     position: absolute;
-    border-radius: 5px;
-    height:30px;
-    width:500px;
-    left:100px;
-}
-.email{
+    border-radius: 0.3125rem; /* 5px */
+    height: 1.875rem; /* 30px */
+    width: 31.25rem; /* 500px */
+    left: 6.25rem; /* 100px */
+  }
+  
+  .email {
     position: absolute;
-    border-radius: 5px;
-    height:30px;
-    width:500px;
-    left:100px;
-}
-.review{
+    border-radius: 0.3125rem; /* 5px */
+    height: 1.875rem; /* 30px */
+    width: 31.25rem; /* 500px */
+    left: 6.25rem; /* 100px */
+  }
+  
+  .review {
     position: absolute;
-    border-radius: 5px;
-    height:100px;
-    width:500px;
-    left:100px;
-    font-size: 20px;
+    border-radius: 0.3125rem; /* 5px */
+    height: 6rem; /* 100px */
+    width: 31.25rem; /* 500px */
+    left: 6.25rem; /* 100px */
+    font-size: 1.25rem; /* 20px */
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.submit{
+  }
+  
+  .submit {
     position: absolute;
-    height:100px;
-    border-radius: 10px;
-    width:100px;
+    border:none;
+    height: 3.125rem; /* 100px */
+    border-radius: 0.625rem; /* 10px */
     background-image: linear-gradient(45deg, #9dec50, #5cada0,#b28be2,#c34f25);
     background-size:300%;
-    left:300px;
-    transition: background-position 1s;
+    width: 6.25rem; /* 100px */
     cursor: pointer;
-    border-width: 0px;
-}
-.submit:hover{
-  background-position: right;
-}
+    left:19rem;
 
-
-
-
-.bottom{
-
-    position: relative;
-    margin-bottom: 0px;
-    height:200px;
-    width:100%;
-    background-color: rgb(33, 31, 31);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.social{
-    font-size: 15px;
-    height:90px;
-    color:white;
-    position: relative;
-    left:150px;
-    top:30px;
-
-}
-.list1 a{
-    text-decoration: none;
-    color:white;
-
-    width: 100%;
-
-}
-
-.contact{
-   height:90px;
-
-    position: relative;
-    top:30px;
-    color: white;
-    left:150px;
-
-}
+  }
+  .submit:hover{
+    background-position: right;
+  }

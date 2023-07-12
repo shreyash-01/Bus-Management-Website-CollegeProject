@@ -1,190 +1,191 @@
-body{
+body {
   overflow-x: hidden;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
   background-image:  repeating-linear-gradient(15deg, #080707 ,#747272 20%)
-}
-.top{
-    background-image:linear-gradient(to right,#060606,#595252);
-    height:100px;
-    width:100%;
-    top: 0px;
-    position: absolute;
-    z-index: 9999;
-}
-.hb{
-    font-family: 'Dancing Script', cursive;
-    color:aliceblue;
-    font-size: 40px;
-    position: absolute;
-    top:20px;
-    left:10px;
-}
-.hb a{
-    text-decoration: none;
-    color:aliceblue;
-
 
 }
-.buttons{
+
+.top {
+  background-image: linear-gradient(to right, #060606, #595252);
+  height: 6.25rem; /* 100px */
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 9999;
+}
+
+.hb {
+  font-family: 'Dancing Script', cursive;
+  color: aliceblue;
+  font-size: 2.5rem; /* 40px */
+  position: absolute;
+  top: 1.25rem; /* 20px */
+  left: 0.625rem; /* 10px */
+}
+
+.hb a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.buttons {
   position: relative;
-  top:15px;
-
+  top: 0.9375rem; /* 15px */
 }
-.buttons a{
+
+.buttons a {
   text-decoration: none;
 }
 
-.about{
+.about {
   position: absolute;
-    height:50px;
-    width: 140px;
-    text-align: center;
-    left:500px;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: aliceblue;
-    padding-top: 30px;
+  height: 3.125rem; /* 50px */
+  width: 8.75rem; /* 140px */
+  text-align: center;
+  left: 31.25rem; /* 500px */
+  font-size: 1.25rem; /* 20px */
+  font-family: 'Times New Roman', Times, serif;
+  color: aliceblue;
+  padding-top: 1.875rem; /* 30px */
 }
-.about:hover{
+
+.about:hover {
+  background-color: #0d0c0c;
+}
+
+.busroute {
+  position: absolute;
+  height: 3.125rem; /* 50px */
+  width: 8.75rem; /* 140px */
+  font-size: 1.25rem; /* 20px */
+  left: 40rem; /* 640px */
+  font-family: 'Times New Roman', Times, serif;
+  color: aliceblue;
+  text-align: center;
+  padding-top: 1.875rem; /* 30px */
+}
+
+.busroute:hover {
   background-color: #0d0c0c;
 }
 
 
 
 
-.busroute{
-    position: absolute;
-    height:50px;
-    width:140px;
-    font-size: 20px;
-    left:640px;
-    font-family: 'Times New Roman', Times, serif;
-    color: aliceblue;
-    text-align: center;
-    padding-top: 30px;
+
+.login {
+  height: 2.5rem; /* 40px */
+  background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+  background-size: 300%;
+  transition: background-position 1s;
+  font-size: 1.25rem; /* 20px */
+  font-family: 'Times New Roman', Times, serif;
+  color: aliceblue;
+  width: 8.75rem; /* 140px */
+  position: absolute;
+  left: 75rem; /* 1200px */
+  top: 1.25rem; /* 20px */
+  cursor: pointer;
+  border-radius: 0.3125rem; /* 5px */
+  border-width: 0;
 }
-.busroute:hover{
-  background-color: #0d0c0c;
-}
 
-
-
-
-
-
-
-.login{
-    height:40px;
-    background-image: linear-gradient(to left,#8a5050,#5e0d1a,#2e2123 80%);
-    background-size:300%;
-    transition: background-position 1s;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: aliceblue;
-    width: 140px;
-    position: absolute;
-    left:1200px;
-    top:20px;
-    cursor:pointer;
-    border-radius: 5px;
-    border-width: 0px;
-
-}
-.login:hover{
+.login:hover {
   background-position: right;
 }
 
-
-
-
-.signup{
-
+.signup {
   position: absolute;
-  top:200px;
+  top: 12.5rem; /* 200px */
   background-color: aliceblue;
-  height:550px;
-  width:800px;
-  border:1px solid black;
-  left:300px;
-  text-align:center;
-  border-radius: 40px;
-}
-.details{
-  font-family: 'Ubuntu',cursive;
-  font-size: 30px;
+  height: 34.375rem; /* 550px */
+  width: 50rem; /* 800px */
+  border: 0.0625rem solid black; /* 1px */
+  left: 18.75rem; /* 300px */
+  text-align: center;
+  border-radius: 2.5rem; /* 40px */
 }
 
-.name{
-  display:none;
-  position:relative;
-  top:10px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  height:0px;
-  width:0px;
-}
-.age{
-  display:none;
-  position:relative;
-  top:10px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  height:0px;
-  width:0px
+.details {
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.875rem; /* 30px */
 }
 
-.gender{
-  display:none;
-  position:relative;
-  top:10px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  height:0px;
-  width:0px
-}
-.phone{
-  display:none;
-  position:relative;
-  top:10px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  height:0px;
-  width:0px
-}
-.email{
-  display:none;
-  position:relative;
-  top:10px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  height:0px;
-  width:0px
+.name {
+  display: none;
+  position: relative;
+  top: 0.625rem; /* 10px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  height: 0;
+  width: 0;
 }
 
-.password{
-  display:none;
-  position:relative;
-  top:10px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  height:0px;
-  width:0px
+.age {
+  display: none;
+  position: relative;
+  top: 0.625rem; /* 10px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  height: 0;
+  width: 0;
 }
 
-.submit{
+.gender {
+  display: none;
+  position: relative;
+  top: 0.625rem; /* 10px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  height: 0;
+  width: 0;
+}
+
+.phone {
+  display: none;
+  position: relative;
+  top: 0.625rem; /* 10px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  height: 0;
+  width: 0;
+}
+
+.email {
+  display: none;
+  position: relative;
+  top: 0.625rem; /* 10px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  height: 0;
+  width: 0;
+}
+
+.password {
+  display: none;
+  position: relative;
+  top: 0.625rem; /* 10px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  height: 0;
+  width: 0;
+}
+
+.submit {
   position: absolute;
-  top:500px;
-  left:350px;
-  height:40px;
-  width:80px;
-  font-family: 'Ubuntu',cursive;
-  border-radius: 10px;
-  background-image: linear-gradient(0deg, #080707,#857d7d);
+  top: 31.25rem; /* 500px */
+  left: 21.875rem; /* 350px */
+  height: 2.5rem; /* 40px */
+  width: 5rem; /* 80px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 0.625rem; /* 10px */
+  background-image: linear-gradient(0deg, #080707, #857d7d);
   cursor: pointer;
-  color:white;
+  color: white;
 }
-.submit:hover{
-  background-image: linear-gradient(180deg, #080707,#857d7d);
 
+.submit:hover {
+  background-image: linear-gradient(180deg, #080707, #857d7d);
 }
+
