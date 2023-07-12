@@ -42,6 +42,10 @@ def bus_routes():
 def admin_login_page():
     return "this is login page for admin"
 
+@app.route('/booking')
+def booking_page():
+    return render_template("booking.html")
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
