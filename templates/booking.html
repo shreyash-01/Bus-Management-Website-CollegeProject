@@ -22,6 +22,75 @@
 
 
     <div class="booking">
+      <h1 align="center" style="font-family: 'Ubuntu',cursive;">You can click on the any of the below bus in the list to book</h1>
+
+      <table cellspacing="0px">
+        <tr><th>Sl. No</th><th>Bus Number</th>
+          <th>Name</th><th>From</th>
+          <th>To</th>
+        </tr>
+       
+       
+        <tbody class="rows">
+        <a href="">
+        <tr>
+          <!-- Example Values -->
+          <td>1</td> <!-- Serial No. -->
+          <td>001</td> <!-- Bus Number -->
+          <td>volvo</td> <!-- Bus Name -->
+          <td>bengaluru</td> <!-- From -->
+          <td>pondi</td> <!-- To -->
+        </tr>
+        </a>
+      </tbody>
+      
+      
+      </table>
 
     </div>
+    <div class="popup">
+      <h2 style=" font-family: 'Ubuntu',cursive;">Specify the time and please confirm your booking by clicking on the button</h2>
+      <select class="time">
+        <option>9:00am</option>
+        <option>11:00am</option>
+        <option>1:00pm</option> 
+        <option>3:00pm</option>
+        <option>5:00pm</option>
+        <option>7:00pm</option> 
+        <option>9:00pm</option> 
+        </select>
+      <button type="submit" class="confirm"><b>Confirm</b></button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script> 
+    var busno;
+    var busname;
+    var from;
+    var to;
+    var time;
+    $(document).ready(function() {
+      $("tr").click(function(){
+        $(".popup").fadeIn();
+        busno = $(this).find('td:eq(1)').text();
+        busname = $(this).find('td:eq(2)').text();
+        from = $(this).find('td:eq(3)').text();
+        to = $(this).find('td:eq(4)').text();
+      });
+      $(".confirm").click(function(e) {
+          e.preventDefault();
+            // Retrieve the entered values
+            time=$(".time").val();
+            console.log(time);
+  
+            // Send data to the server here
+  
+            $('.popup').fadeOut();
+            
+         });
+    });
+    </script>
+  </body>
+</html>
 
