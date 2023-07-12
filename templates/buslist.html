@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../static/buslist.css">
+    <link rel="icon" type="image/x-icon" href="../static/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Dancing+Script&family=Lilita+One&family=Pacifico&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
-    <title></title>
+    <title>Bus List</title>
   </head>
   <body>
     <div class="top">
@@ -16,7 +17,7 @@
            <a href="/home" class="homeb"> BusManagement</a>
         </div>
 
-        <p class="heading">Bus Users Edit</p>
+        <p class="heading">Bus List</p>
 
     </div>
 
@@ -47,54 +48,221 @@
         <button type="submit" class="enter">Enter New Bus</button>
     </div>
 
-        <div class="popup">
-            <h2 class="heading2">Enter New Bus Details</h2><br>
-            <form id="detailsForm">
-              
-              <input type="text" placeholder="Bus Number" id="busnumber" required>
-              <br><br>
-             
-              <input type="text" placeholder="Bus Name" id="busname" required>
-              <br><br>
-           
-              <input type="text" placeholder="Employee Number" id="employeenumber" required>
-              <br><br>
-              
-              <input type="text" placeholder="Route Number" id="routenumber" required>
-              <br><br>
-              <br><br>
-              <button type="submit" class="sub">Submit</button>
-              </form>
-              <div class="error-summary" style="display: none; color: red;"></div>
-            </div>
-
-
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-        $('.enter').click(function(e) {
-          e.preventDefault();
-          $('.popup').fadeIn();
-          });
-         $("form").submit(function(e) {
-          e.preventDefault();
-            // Retrieve the entered values
-            var busnumber = $('#busnumber').val();
-            var busname = $('#busname').val();
-            var employeenumber = $('#employeenumber').val();
-            var routenumber = $('#routenumber').val();
-  
-            // Send data to the server here
-  
-            $('.popup').fadeOut();
-            form.reset(); // Reset the form after submission
-         });
+    <div class="popup">
+      <h2 class="heading2">Enter New Bus Details</h2><br><br><br><br><br>
+      <form id="busForm">
         
+        <input type="text" placeholder="Bus Number" id="bno" required>
+        <br><br>
+       
+        <input type="text" placeholder="Bus Name" id="bname" required>
+        <br><br>
+     
+        <input type="text" placeholder="Employee Number" id="eno" required>
+        <br><br>
+        
+        <input type="text" placeholder="Route Number" id="rno" required>
+        <br><br>
+        <br><br>
+        <button type="submit" class="sub">Submit</button>
+      </form>
+  </div>
+  <div class="popup2">
+      <h2 class="heading2">Perform chosen operation on this row</h2><br><br><br>
+      <input type="radio" id="update" name="option" value="Update">
+       <label for="update" id="updatelabel"><b>Update</b></label>
+       
+       
+      <div class="updatecontent">
+          <div class="selector">
+              <p class="listmessage">Choose the column to edit:</p>
+              <br>
+              <form id="updateform">
+              <select name="column" id="list">
+                  <option>BNo</option>
+                  <option>BName</option>
+                  <option>ENo</option>
+                  <option>RNo</option>
+              </select>
+           </div>
+           <br>
+           
+           
+           <input type="text" id="updateinsert" placeholder="Enter the update value" >
+           <button type="submit" class="confirm"><b>Confirm</b></button>
+          </form>
+      </div>
+
+      <input type="radio" id="delete" name="option" value="Delete">
+       <label for="delete" id="deletelabel"><b>Delete</b></label>
+       <div class="deletecontent">
+          <p class="deletemessage">Are you sure you want to delete this row?</p>
+          <form id="delform">
+          <button type="submit" class="confirmdel"><b>Confirm</b></button>
+          </form>
+       </div>
+
+      
+
+  </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script>    
+var bno;
+var bname;
+var eno;
+var rno;
+var updatevalue;
+var updatecolumn;
+var delbno;
+$(document).ready(function() {
+  $('.enter').click(function(e) {
+    e.preventDefault();
+    $('.popup').fadeIn();
+    });
+  $("#busForm").submit(function(e) {
+      e.preventDefault();
+
+      // Retrieve the entered values
+      var bno = $('#bno').val();
+      var bname = $('#bname').val();
+      var eno = $('#eno').val();
+      var rno = $('#rno').val();
+      console.log(rno);  //reference
+
+      // Construct the data object to send to the server
+      var data = {
+          bno: bno,
+          bname: bname,
+          eno: eno,
+          rno: rno
+      };
+
+      // Send the data to the server using AJAX
+      $.ajax({
+          url: '/add_buslist', // Replace with your server endpoint URL
+          method: 'POST',
+          data: data,
+          success: function(response) {
+          // Handle the server response
+          console.log(response);
+
+          // Optionally perform actions based on the response
+          },
+          error: function(xhr, status, error) {
+          // Handle any errors that occur during the AJAX request
+          console.log('Error:', error);
+          }
       });
+
+      // Hide the popup or perform any other necessary actions
+      $('.popup').fadeOut();
+      $('#busForm')[0].reset();
+  });
+   
+  $("tr").click(function(){
+      $(".popup2").fadeIn();
+      bno = $(this).find('td:eq(0)').text();
+      bname = $(this).find('td:eq(1)').text();
+      eno = $(this).find('td:eq(2)').text();
+      rno = $(this).find('td:eq(3)').text();
+  });
+  $('#update').change(function() {
+      if ($(this).is(':checked')) {
+          $(".popup2").animate({
+              height: "20rem"
+          }, 1000);
+          $('.updatecontent').fadeIn();
+          $('.deletecontent').fadeOut();
+          $('.confirm').fadeIn();
+
+
+      };
+  });
+  $('#updateform').submit(function(e) {
+      e.preventDefault();
+      updatecolumn = $("#list").val();        // send this to server
+      updatevalue = $("#updateinsert").val(); // send this to server
+      console.log(updatecolumn); // reference
+      console.log(updatevalue); // reference
+
+      // Construct the data object to send to the server
+       var data = {
+          updatecolumn: updatecolumn,
+          updatevalue: updatevalue
+      };
+
+      // Send the data to the server using AJAX
+      $.ajax({
+          url: '/update_buslist', // Replace with your server endpoint URL
+          method: 'POST',
+          data: data,
+          success: function(response) {
+          // Handle the server response
+          console.log(response);
+
+          // Optionally perform actions based on the response
+          },
+          error: function(xhr, status, error) {
+          // Handle any errors that occur during the AJAX request
+          console.log('Error:', error);
+          }
+      });
+
+      // Hide the popup or perform any other necessary actions
+      $(".popup2").fadeOut();
+  });
+   
+
+  $('#delete').change(function() {
+      if ($(this).is(':checked')) {
+          $(".popup2").animate({
+              height: "15rem"
+          }, 1000);
+          $('.deletecontent').fadeIn();
+          $('.updatecontent').fadeOut();
+          $('.confirmdel').fadeIn();       
+      };
+  });
+ 
+ 
+  $("#delform").submit(function(e) {
+      e.preventDefault();
+      delbno = bno; // send deleno to server
+      console.log(deleno);
+
+      // Construct the data object to send to the server
+      var data = {
+          delbno: delno
+       };
+
+       // Send the data to the server using AJAX
+      $.ajax({
+          url: '/delete_buslist', // Replace with your server endpoint URL
+           method: 'POST',
+          data: data,
+          success: function(response) {
+          // Handle the server response
+          console.log(response);
+
+          // Optionally perform actions based on the response
+           },
+          error: function(xhr, status, error) {
+          // Handle any errors that occur during the AJAX request
+          console.log('Error:', error);
+          }
+       });
+
+      // Hide the popup or perform any other necessary actions
+      $(".popup2").fadeOut();
+      });
+  
+ 
+  
+});
 </script>
-    </body>
+</body>
 </html>
