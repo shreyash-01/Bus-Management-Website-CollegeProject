@@ -23,9 +23,28 @@ def signup_account():
     return render_template("signup.html")
 
 
-@app.route('/dashboard')
+@app.route('/admin/dashboard')
 def dashboard_page():
-    return "this is dashboard"
+    return render_template("dashboard.html")
+
+
+@app.route('/admin/users')
+def users_page():
+    return render_template("users.html")
+
+
+@app.route('/admin/busroutes')
+def bus_routes():
+    return render_template("busroute.html")
+
+
+@app.route('/admin')
+def admin_login_page():
+    return "this is login page for admin"
+
+@app.route('/booking')
+def booking_page():
+    return render_template("booking.html")
 
 
 if __name__ == '__main__':
