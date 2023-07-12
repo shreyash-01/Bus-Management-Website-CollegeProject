@@ -1,0 +1,194 @@
+body {
+  overflow-x: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  background-image: repeating-linear-gradient(15deg, #080707, #747272 20%);
+}
+
+.top {
+  background-image: linear-gradient(to right, #060606, #595252);
+  height: 6.25rem; /* 100px */
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 9999;
+}
+
+.hb {
+  font-family: 'Dancing Script', cursive;
+  color: aliceblue;
+  font-size: 2.5rem; /* 40px */
+  position: absolute;
+  top: 1.25rem; /* 20px */
+  left: 0.625rem; /* 10px */
+}
+
+.hb a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.heading {
+  position: absolute;
+  font-family: 'Ubuntu', cursive;
+  color: white;
+  font-size: 1.875rem; /* 30px */
+  left: 37.5rem; /* 600px */
+  top: 0.5rem; /* 20px */
+}
+
+.content {
+  position: absolute;
+  top: 12.5rem; /* 200px */
+  background-color: aliceblue;
+  height: 37.5rem; /* 600px */
+  width: 50rem; /* 800px */
+  border: 0.0625rem solid black; /* 1px */
+  left: 18.75rem; /* 300px */
+  text-align: center;
+  border-radius: 2.5rem; /* 40px */
+  
+}
+
+table {
+  text-align: center;
+}
+
+th {
+  width: 62.5rem; /* 1000px */
+  height: 3.125rem; /* 50px */
+  border-bottom: 0.0625rem solid black; /* 1px */
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.25rem; /* 20px */
+}
+
+table a {
+  text-decoration: none;
+}
+
+.rows tr {
+  cursor: pointer;
+  height: 5rem; /* 80px */
+  font-size: 1.0625rem; /* 17px */
+  font-family: 'Ubuntu', cursive;
+}
+
+.rows tr:hover {
+  background-color: #848181;
+}
+
+td {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.enter {
+  position: relative;
+  height: 3.75rem; /* 60px */
+  border-radius: 1rem; /* 20px */
+  width: 7.5rem; /* 120px */
+  background-image: linear-gradient(45deg, #132b39, #18436a, #4758a2, #1f2230);
+  background-size: 300%;
+  left: 0rem; /* 170px */
+  margin-top: 1rem; /* 150px */
+  transition: background-position 1s;
+  cursor: pointer;
+  border-width: 0;
+  font-size: 1.25rem; /* 20px */
+  color: white;
+}
+
+.enter:hover {
+  background-position: right;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 13rem; /* 10px */
+  left: 25rem; /* 120px */
+  height: 25rem; /* 400px */
+  width: 31.25rem; /* 500px */
+  background-color: aliceblue;
+  border: 0.0625rem solid #ccc; /* 1px */
+  border-radius: 1.25rem; /* 20px */
+  font-style: 'Ubuntu', cursive;
+  align-items: center;
+}
+
+.heading2 {
+  text-align: center;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  background-image: linear-gradient(to top left, #727eb5, #1d233e);
+  font-family: 'Ubuntu', cursive;
+  color: white;
+  top: 0;
+  margin-top: 0rem;
+  height:3rem;
+}
+
+#busnumber {
+  position: relative;
+  left: 9.0625rem; /* 145px */
+  height: 1.875rem; /* 30px */
+  width: 12.5rem; /* 200px */
+  border-radius: 1rem; /* 20px */
+  font-style: 'Ubuntu', cursive;
+  font-size: 0.9375rem; /* 15px */
+}
+
+#busname {
+  position: relative;
+  top: 0.625rem; /* 10px */
+  left: 9.0625rem;
+  height: 1.875rem; /* 30px */
+  width: 12.5rem; /* 200px */
+  border-radius: 1rem; /* 20px */
+  font-style: 'Ubuntu', cursive;
+  font-size: 0.9375rem; /* 15px */
+}
+
+#employeenumber {
+  position: relative;
+  top: 0.625rem; /* 10px */
+  left: 9.0625rem;
+  height: 1.875rem; /* 30px */
+  width: 12.5rem; /* 200px */
+  border-radius: 1rem; /* 20px */
+  font-style: 'Ubuntu', cursive;
+  font-size: 0.9375rem; /* 15px */
+}
+
+#routenumber {
+  position: relative;
+  top: 0.625rem; /* 10px */
+  left: 9.0625rem;
+  height: 1.875rem; /* 30px */
+  width: 12.5rem; /* 200px */
+  border-radius: 1rem; /* 20px */
+  font-style: 'Ubuntu', cursive;
+  font-size: 0.9375rem; /* 15px */
+}
+
+.sub {
+  position: absolute;
+  left: 12.5rem; /* 200px */
+  height: 2.5rem; /* 40px */
+  width: 5rem; /* 80px */
+  font-family: 'Ubuntu', cursive;
+  border-radius: 1rem; /* 10px */
+  background-image: linear-gradient(0deg, #080707, #857d7d);
+  cursor: pointer;
+  color: white;
+}
+
+.sub:hover {
+  background-image: linear-gradient(180deg, #080707, #857d7d);
+}
+
