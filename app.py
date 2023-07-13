@@ -2,15 +2,21 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
+# homepage route
 @app.route('/')
 def home_page():  # put application's code here
     return render_template('home.html')
 
 
-@app.route('/account')
-def user_account():
-    return "this is account page"
+# user routes
+@app.route('/booking')
+def booking_page():
+    return render_template("booking.html")
+
+
+@app.route('/busroute')
+def bus_routes_page():
+    return render_template("busroute.html")
 
 
 @app.route('/login')
@@ -23,7 +29,13 @@ def signup_account():
     return render_template("signup.html")
 
 
-@app.route('/admin/dashboard')
+# admin routes
+@app.route('/admin/login')
+def admin_login_page():
+    return "this is login page for admin"
+
+
+@app.route('/admin')
 def dashboard_page():
     return render_template("dashboard.html")
 
@@ -33,18 +45,14 @@ def users_page():
     return render_template("users.html")
 
 
-@app.route('/admin/busroutes')
-def bus_routes():
-    return render_template("busroute.html")
+@app.route('/admin/buslist')
+def bus_list_page():
+    return render_template("buslist.html")
 
 
-@app.route('/admin')
-def admin_login_page():
-    return "this is login page for admin"
-
-@app.route('/booking')
-def booking_page():
-    return render_template("booking.html")
+@app.route('/admin/employees')
+def bus_employees_page():
+    return render_template("employee.html")
 
 
 if __name__ == '__main__':
