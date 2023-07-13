@@ -131,6 +131,8 @@
             var ename = $('#ename').val();
             var eage = $('#eage').val();
             var ephone = $('#ephone').val();
+            
+            
   
             // Construct the data object to send to the server
             var data = {
@@ -158,7 +160,8 @@
             });
 
             // Hide the popup or perform any other necessary actions
-            $('.popup').fadeOut();
+            $('.popup').css("animation"," myAnim 1s ease 0s 1 normal forwards");
+            
             $('#employeeForm')[0].reset();
         });
          

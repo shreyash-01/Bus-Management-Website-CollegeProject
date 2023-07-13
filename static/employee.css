@@ -119,6 +119,7 @@ td {
   border-radius: 1.25rem; /* 20px */
   font-style: 'Ubuntu', cursive;
   align-items: center;
+  
 }
 
 .heading2 {
@@ -321,4 +322,16 @@ td {
 .confirmdel:hover{
   background-position: right;
   color:white;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 1;
+		transform: rotate(0) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: rotate(-540deg) scale(0);
+	}
 }
