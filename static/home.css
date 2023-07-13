@@ -128,11 +128,11 @@ body {
   }
   
   .second {
-    background-image: linear-gradient(to top, white, #0a0a0a 20% 70%, white);
-    background-size: 500%;
+    background-image: url("waves.png");
+    background-size: 100rem 40rem;
     position: relative;
-    top: 3.125rem; /* 50px */
-    height: 40.625rem; /* 650px */
+    top: 3rem; /* 50px */
+    height: 40rem; /* 650px */
   }
   
   .contactus {
@@ -140,10 +140,10 @@ body {
     background-color: aliceblue;
     border-radius: 1.875rem; /* 30px */
     position: relative;
-    top: 2.5rem; /* 40px */
+    top: 4rem; /* 40px */
     border: 0.125rem solid black; /* 2px */
     width: 50rem; /* 500px */
-    left: 15rem; /* 100px */
+    left: 18rem; /* 100px */
     height: 25rem; /* 400px */
     text-align: center;
   }
