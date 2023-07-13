@@ -121,7 +121,8 @@
     $(document).ready(function() {
         $('.enter').click(function(e) {
           e.preventDefault();
-          $('.popup').fadeIn();
+          $('.popup').css("display","block");
+          $('.popup').css("animation"," myAnim2 1s ease 0s 1 normal forwards");
           });
         $("#employeeForm").submit(function(e) {
             e.preventDefault();
@@ -166,7 +167,8 @@
         });
          
          $("tr").click(function(){
-            $(".popup2").fadeIn();
+            $('.popup2').css("display","block");
+            $('.popup2').css("animation"," myAnim2 1s ease 0s 1 normal forwards");
             eno = $(this).find('td:eq(0)').text();
             ename = $(this).find('td:eq(1)').text();
             eage = $(this).find('td:eq(2)').text();
@@ -215,7 +217,8 @@
             });
 
             // Hide the popup or perform any other necessary actions
-            $(".popup2").fadeOut();
+            $('.popup2').css("animation"," myAnim3 1s ease 0s 1 normal forwards");
+            $('#updateform')[0].reset();
         });
          
 
@@ -259,7 +262,7 @@
              });
 
             // Hide the popup or perform any other necessary actions
-            $(".popup2").fadeOut();
+            $('.popup2').css("animation"," myAnim3 1s ease 0s 1 normal forwards");
             });
         
        

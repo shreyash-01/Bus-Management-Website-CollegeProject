@@ -116,7 +116,8 @@ var delbno;
 $(document).ready(function() {
   $('.enter').click(function(e) {
     e.preventDefault();
-    $('.popup').fadeIn();
+    $('.popup').css("display","block");
+    $('.popup').css("animation"," myAnim2 1s ease 0s 1 normal forwards");
     });
   $("#busForm").submit(function(e) {
       e.preventDefault();
@@ -154,12 +155,13 @@ $(document).ready(function() {
       });
 
       // Hide the popup or perform any other necessary actions
-      $('.popup').fadeOut();
+      $('.popup').css("animation"," myAnim 1s ease 0s 1 normal forwards");
       $('#busForm')[0].reset();
   });
    
   $("tr").click(function(){
-      $(".popup2").fadeIn();
+    $('.popup2').css("display","block");
+    $('.popup2').css("animation"," myAnim2 1s ease 0s 1 normal forwards");
       bno = $(this).find('td:eq(0)').text();
       bname = $(this).find('td:eq(1)').text();
       eno = $(this).find('td:eq(2)').text();
@@ -208,7 +210,8 @@ $(document).ready(function() {
       });
 
       // Hide the popup or perform any other necessary actions
-      $(".popup2").fadeOut();
+      $('.popup2').css("animation"," myAnim3 1s ease 0s 1 normal forwards");
+      $('#updateform')[0].reset();
   });
    
 
@@ -226,12 +229,12 @@ $(document).ready(function() {
  
   $("#delform").submit(function(e) {
       e.preventDefault();
-      delbno = bno; // send deleno to server
-      console.log(deleno);
+      delbno = bno; // send delbno to server
+      console.log(delbno);
 
       // Construct the data object to send to the server
       var data = {
-          delbno: delno
+          delbno: delbno
        };
 
        // Send the data to the server using AJAX
@@ -250,9 +253,10 @@ $(document).ready(function() {
           console.log('Error:', error);
           }
        });
+       $('.popup2').css("animation"," myAnim3 1s ease 0s 1 normal forwards");
 
       // Hide the popup or perform any other necessary actions
-      $(".popup2").fadeOut();
+      
       });
   
  

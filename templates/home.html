@@ -68,6 +68,42 @@
                 </div>
             </div>
         </div>
+        <div class="bottom">
+            <div class="social">
+                You can follow us on:
+                <ul class="list1">
+                        <li><a href="" >Instagram</a></li>
+                        <br>
+    
+                        <li><a href="" >Twitter</a></li>
+        
+    
+               </ul>
+    
+            </div>
+            <div class="credit">
+                <p style="font-size: 1.2rem;">Project By:</p>
+                Utkarsh Singh<br>
+                Shreyash<br>
+                Vaibhav Singh
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+             $(window).scroll(function() {
+            var contactOffset = $('.contactus').offset().top;
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+
+            if (scrollTop + windowHeight > contactOffset) {
+                $('.contactus').css("opacity","1");
+                $('.contactus').css("animation","myAnim 1s ease 0s 1 normal forwards");
+             }
+         });
+        </script>
 
     </body>
 </html>

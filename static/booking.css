@@ -82,19 +82,41 @@ body {
   .popup {
     display: none;
     position: absolute;
+    background-color: aliceblue;
+    margin-top: 0;
     top: 18.75rem; /* 300px */
     left: 28.125rem; /* 450px */
     height: 12.5rem; /* 200px */
     width: 31.25rem; /* 500px */
-    background-color: rgb(199, 200, 202);
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+   
     border: 0.0625rem solid black; /* 1px */
-    border-radius: 0.3125rem; /* 5px */
+    border-bottom-right-radius: 0.3125rem; /* 5px */
+    border-bottom-left-radius: 0.3125rem;
     text-align: center;
   }
+
+  .timetext {
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    position: absolute;
+    width:100%;
+    text-align: center;
+    background-image: linear-gradient(to top left, #727eb5, #1d233e);
+    font-family: 'Ubuntu', cursive;
+    color: white;
+    margin-top: 0rem;
+    height: 4.5rem;
+  }
+  
   
   .time {
+    position: relative;
     height: 1.875rem; /* 30px */
     font-family: 'Ubuntu', cursive;
+    top:6rem;
+    width:10rem;
   }
   
   .confirm {
@@ -108,3 +130,59 @@ body {
     cursor: pointer;
   }
   
+
+  @keyframes myAnim {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+  
+    38% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    55% {
+      animation-timing-function: ease-in;
+      transform: translateY(-65px);
+    }
+  
+    72% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+  
+    81% {
+      animation-timing-function: ease-in;
+      transform: translateY(-28px);
+    }
+  
+    90% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+  
+    95% {
+      animation-timing-function: ease-in;
+      transform: translateY(-8px);
+    }
+  
+    100% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes myAnim2 {
+    0% {
+      transform: scale(1);
+      transform-origin: 50% 0%;
+    }
+  
+    100% {
+      transform: scale(0);
+      transform-origin: 50% 0%;
+    }
+  }
