@@ -14,7 +14,7 @@
     <div class="top">
 
         <div class="hb">
-           <a href="/home" class="homeb"> BusManagement</a>
+           <a href="/" class="homeb"> BusManagement</a>
         </div>
 
         <p class="heading">Bus List</p>
@@ -26,26 +26,21 @@
             <tr><th>Bus Number</th><th>Bus Name</th>
               <th>ENumber</th><th>Route Number</th>
             </tr>
-           
-           
+
             <tbody class="rows">
-            <a href="">
-            <tr>
-              <!-- Example Values -->
-              <td>001</td> <!-- ENo. -->
-              <td>Volvo</td> <!-- EName -->
-              <td>0056</td> <!-- EAge-->
-              <td>901</td> <!-- EPhone -->
-            </tr>
-            </a>
-            
-          </tbody>
-          
-          
+                <a href="">
+                <tr>
+                <!-- Example Values -->
+                    <td>001</td> <!-- ENo. -->
+                    <td>Volvo</td> <!-- EName -->
+                    <td>0056</td> <!-- EAge-->
+                    <td>901</td> <!-- EPhone -->
+                </tr>
+                </a>
+            </tbody>
           </table>
         <br><br>
         
-
         <button type="submit" class="enter">Enter New Bus</button>
     </div>
 
@@ -68,25 +63,24 @@
         <button type="submit" class="sub">Submit</button>
       </form>
   </div>
+
   <div class="popup2">
-      <h2 class="heading2">Perform chosen operation on this row</h2><br><br><br>
-      <input type="radio" id="update" name="option" value="Update">
-       <label for="update" id="updatelabel"><b>Update</b></label>
-       
-       
-      <div class="updatecontent">
-          <div class="selector">
-              <p class="listmessage">Choose the column to edit:</p>
-              <br>
-              <form id="updateform">
-              <select name="column" id="list">
-                  <option>BNo</option>
-                  <option>BName</option>
-                  <option>ENo</option>
-                  <option>RNo</option>
-              </select>
-           </div>
-           <br>
+        <h2 class="heading2">Perform chosen operation on this row</h2><br><br><br>
+        <input type="radio" id="update" name="option" value="Update">
+        <label for="update" id="updatelabel"><b>Update</b></label>
+    <div class="updatecontent">
+        <div class="selector">
+            <p class="listmessage">Choose the column to edit:</p>
+            <br>
+            <form id="updateform">
+            <select name="column" id="list">
+                <option>BNo</option>
+                <option>BName</option>
+                <option>ENo</option>
+                <option>RNo</option>
+            </select>
+        </div>
+        <br>
            
            
            <input type="text" id="updateinsert" placeholder="Enter the update value" >
