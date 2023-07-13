@@ -47,14 +47,38 @@ body {
   text-align: center;
   border-radius: 2.5rem; /* 40px */
   align-items: center;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+
+}
+table {
+  text-align: center;
 }
 
-ul {
-  list-style-type: none;
+th {
+  width: 62.5rem; /* 1000px */
+  height: 3.125rem; /* 50px */
+  border-bottom: 0.0625rem solid black; /* 1px */
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.25rem; /* 20px */
 }
 
-.content a {
+table a {
   text-decoration: none;
 }
+
+.rows tr {
+  cursor: pointer;
+  height: 5rem; /* 80px */
+  font-size: 1.0625rem; /* 17px */
+  font-family: 'Ubuntu', cursive;
+}
+
+.rows tr:hover {
+  background-color: #a6a3a3;
+}
+
+td {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
