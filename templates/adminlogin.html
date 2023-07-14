@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="../static/login.css">
+        <link rel="stylesheet" href="../static/adminlogin.css">
         <link rel="icon" type="image/x-icon" href="../static/icon.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Dancing+Script&family=Lilita+One&family=Pacifico&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-        <title>Login</title>
+        <title> Admin Login</title>
     </head>
     <body>
         <div class="top">
             <div class="hb">
-              <a href="/" class="homeb"> BusManagement</a>
+               <a href="/" class="homeb"> BusManagement</a>
             </div>
 
             <div class="buttons">
-              <a href="" class="about">About Us</a>
-              <a href="/busroute" class="busroute">Bus Route</a>
+                <a href="" class="about">About Us</a>
+                <a href="/busroute" class="busroute">Bus Route</a>
             </div>
 
             <div class="register">
+                <form action="/login">
+                    <button class="loginbutton">Login</button>
+                </form>
                 <form action="/signup">
-                <button class="signup">Signup</button>
-              </form>
+                    <button class="signup">Signup</button>
+                </form>
             </div>
-
         </div>
 
         <div class="login">
-          <p class="details"><b>Enter your credentials below</b></p>
+          <p class="details"><b>Enter your admin credentials</b></p>
           <br>
 
           <form>
@@ -40,7 +42,6 @@
 
             <button type=submit class="submit">Submit</button>
           </form>
-          <a href="/adminlogin" class="adminlogin"> Admin Login?</a>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

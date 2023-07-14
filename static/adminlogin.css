@@ -1,0 +1,191 @@
+body {
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    background-image:  repeating-linear-gradient(15deg, #080707 ,#747272 20%)
+  }
+  
+  .top {
+    background-image: linear-gradient(to right, #060606, #595252);
+    height: 6.25rem; /* 100px */
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 9999;
+  }
+  
+  .hb {
+    font-family: 'Dancing Script', cursive;
+    color: aliceblue;
+    font-size: 2.5rem; /* 40px */
+    position: absolute;
+    top: 1.25rem; /* 20px */
+    left: 0.625rem; /* 10px */
+  }
+  
+  .hb a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+  .buttons {
+    position: relative;
+    top: 0.9375rem; /* 15px */
+  }
+  
+  .buttons a {
+    text-decoration: none;
+  }
+  
+  .about {
+    position: absolute;
+    height: 3.125rem; /* 50px */
+    width: 8.75rem; /* 140px */
+    text-align: center;
+    left: 31.25rem; /* 500px */
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    padding-top: 1.875rem; /* 30px */
+  }
+  
+  .about:hover {
+    background-color: #0d0c0c;
+  }
+  
+  .busroute {
+    position: absolute;
+    height: 3.125rem; /* 50px */
+    width: 8.75rem; /* 140px */
+    font-size: 1.25rem; /* 20px */
+    left: 40rem; /* 640px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 1.875rem; /* 30px */
+  }
+  
+  .busroute:hover {
+    background-color: #0d0c0c;
+  }
+ 
+ 
+  .loginbutton {
+    height: 2.5rem; /* 40px */
+    background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+    background-size: 300%;
+    transition: background-position 1s;
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 8.75rem; /* 140px */
+    position: absolute;
+    left: 75rem; /* 1200px */
+    top: 1.25rem; /* 20px */
+    cursor: pointer;
+    border-radius: 0.3125rem; /* 5px */
+    border-width: 0;
+  }
+  
+  .loginbutton:hover {
+    background-position: right;
+  }
+  
+  
+  
+  
+  .signup {
+    height: 2.5rem; /* 40px */
+    background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+    background-size: 300%;
+    transition: background-position 1s;
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 8.75rem; /* 140px */
+    position: absolute;
+    left: 84.375rem; /* 1350px */
+    top: 1.25rem; /* 20px */
+    cursor: pointer;
+    border-radius: 0.3125rem; /* 5px */
+    border-width: 0;
+  }
+  
+  .signup:hover {
+    background-position: right;
+  }
+  
+  .busroute {
+    position: absolute;
+    height: 3.125rem; /* 50px */
+    width: 8.75rem; /* 140px */
+    font-size: 1.25rem; /* 20px */
+    left: 40rem; /* 640px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 1.875rem; /* 30px */
+  }
+  
+  .busroute:hover {
+    background-color: #0d0c0c;
+  }
+  
+  .details {
+    font-family: 'Ubuntu', cursive;
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  .email {
+    position: relative;
+    top: 0.625rem; /* 10px */
+    font-family: 'Ubuntu', cursive;
+    border-radius: 0.625rem; /* 10px */
+  }
+  
+  .password {
+    position: relative;
+    top: 0.625rem; /* 10px */
+    font-family: 'Ubuntu', cursive;
+    border-radius: 0.625rem; /* 10px */
+  }
+  
+  .submit {
+    height: 2.5rem; /* 40px */
+    width: 5rem; /* 80px */
+    font-family: 'Ubuntu', cursive;
+    border-radius: 0.625rem; /* 10px */
+    background-image: linear-gradient(0deg, #080707, #857d7d);
+    cursor: pointer;
+    color: white;
+  }
+  
+  .submit:hover {
+    background-image: linear-gradient(180deg, #080707, #857d7d);
+  }
+  
+  
+  
+  .login{
+    display:none;
+    position: absolute;
+    top:200px;
+    background-color: aliceblue;
+    height:0px;
+    border:1px solid black;
+    left:300px;
+    text-align:center;
+    border-radius: 40px;
+  
+  }
+  
+  .adminlogin{
+    position: relative;
+    font-family: 'Ubuntu', cursive;
+    font-size: 1rem;
+    color:rgb(140, 120, 223);
+    top:1rem;
+    left:0rem;
+  
+  
+  }
