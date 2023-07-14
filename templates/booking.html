@@ -43,22 +43,22 @@
           <td>pondi</td> <!-- To -->
         </tr>
         </a>
-      </tbody>
-      
-      
+      </tbody>  
       </table>
-
     </div>
+   
+   
+   
     <div class="popup">
-      <h2 style=" font-family: 'Ubuntu',cursive;">Specify the time and please confirm your booking by clicking on the button</h2>
+      <h2 class="timetext">Specify the departure time and please confirm your booking by 
+        clicking on the button</h2>
       <select class="time">
-        <option>9:00am</option>
-        <option>11:00am</option>
-        <option>1:00pm</option> 
-        <option>3:00pm</option>
-        <option>5:00pm</option>
-        <option>7:00pm</option> 
-        <option>9:00pm</option> 
+        <!-- Here you have to enter the bus timings, below are example values -->
+        <option>dsd</option>
+        <option>dsa</option>
+        <option>dsds</option> 
+        <option>dsds</option>
+
         </select>
       <button type="submit" class="confirm"><b>Confirm</b></button>
     </div>
@@ -73,7 +73,8 @@
     var time;
     $(document).ready(function() {
       $("tr").click(function(){
-        $(".popup").fadeIn();
+        $('.popup').css("display","block");
+        $('.popup').css("animation"," myAnim 1s ease 0s 1 normal forwards");
         busno = $(this).find('td:eq(1)').text();
         busname = $(this).find('td:eq(2)').text();
         from = $(this).find('td:eq(3)').text();
@@ -85,9 +86,32 @@
             time=$(".time").val();
             console.log(time);
   
-            // Send data to the server here
+            // Send this data to the server here
+            var data = {
+                busno: busno,
+                busname:busname,
+                from:from,
+                to:to
+             };
+
+             // Send the data to the server using AJAX
+            $.ajax({
+                url: '/delete_employee', // Replace with your server endpoint URL
+                method: 'POST',
+                data: data,
+                success: function(response) {
+                // Handle the server response
+                console.log(response);
+
+                // Optionally perform actions based on the response
+                 },
+                error: function(xhr, status, error) {
+                // Handle any errors that occur during the AJAX request
+                console.log('Error:', error);
+                }
+             });
   
-            $('.popup').fadeOut();
+             $('.popup').css("animation"," myAnim2 1s ease 0s 1 normal forwards");
             
          });
     });

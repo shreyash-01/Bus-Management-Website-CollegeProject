@@ -2,6 +2,7 @@ body {
     overflow-x: hidden;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 0;
   }
   
   .top {
@@ -128,22 +129,23 @@ body {
   }
   
   .second {
-    background-image: linear-gradient(to top, white, #0a0a0a 20% 70%, white);
-    background-size: 500%;
+    background-image: url("waves.png");
+    background-size: 100rem 45rem;
     position: relative;
-    top: 3.125rem; /* 50px */
-    height: 40.625rem; /* 650px */
+    top: 3rem; /* 50px */
+    height: 45rem; /* 650px */
   }
   
   .contactus {
+    opacity: 0;
     padding: 3.125rem; /* 50px */
     background-color: aliceblue;
-    border-radius: 1.875rem; /* 30px */
+    border-radius: 1rem; /* 30px */
     position: relative;
-    top: 2.5rem; /* 40px */
-    border: 0.125rem solid black; /* 2px */
+    top: 4rem; /* 40px */
+    border: 0.05rem solid black; /* 2px */
     width: 50rem; /* 500px */
-    left: 15rem; /* 100px */
+    left: 18rem; /* 100px */
     height: 25rem; /* 400px */
     text-align: center;
   }
@@ -214,3 +216,60 @@ body {
   .submit:hover{
     background-position: right;
   }
+
+  .bottom{
+
+    position:relative;
+    top:0rem;
+    margin-bottom: 0rem;
+    height:25rem;
+    width:100%;
+    background-image:url("bottom.png");
+    background-size: 100rem 25rem;
+}
+.social{
+    position:absolute;
+    font-family: 'Ubuntu',cursive;
+    font-size: 1rem;
+    height:5.4rem;
+    color:white;
+    position: relative;
+    left:15rem;
+    top:15rem;
+    font-size: 1.4rem;
+
+}
+.list1{
+  list-style-type: none;
+}
+.list1 a{
+    text-decoration: none;
+    color:white;
+    font-size: 1rem;
+    
+
+    width: 100%;
+
+}
+.credit{
+  position:absolute;
+  font-family: 'Ubuntu',cursive;
+  font-size: 1rem;
+  height:5.4rem;
+  color:white;
+  position: relative;
+  left:80rem;
+  top:11rem;
+  
+
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
