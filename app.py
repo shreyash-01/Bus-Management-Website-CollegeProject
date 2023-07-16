@@ -1,6 +1,7 @@
 from flask import Flask, render_template
-
+import DummyData
 app = Flask(__name__)
+
 
 # homepage route
 @app.route('/')
@@ -42,17 +43,17 @@ def dashboard_page():
 
 @app.route('/admin/users')
 def users_page():
-    return render_template("users.html")
+    return render_template("users.html", users=DummyData.users)
 
 
 @app.route('/admin/buslist')
 def bus_list_page():
-    return render_template("buslist.html")
+    return render_template("buslist.html", buslist=DummyData.buslist)
 
 
 @app.route('/admin/employees')
 def bus_employees_page():
-    return render_template("employee.html")
+    return render_template("employee.html", employees=DummyData.employees)
 
 
 if __name__ == '__main__':

@@ -28,15 +28,14 @@
             </tr>
 
             <tbody class="rows">
-                <a href="">
+            {% for bus in buslist %}
                 <tr>
-                <!-- Example Values -->
-                    <td>001</td> <!-- ENo. -->
-                    <td>Volvo</td> <!-- EName -->
-                    <td>0056</td> <!-- EAge-->
-                    <td>901</td> <!-- EPhone -->
+                    <td>{{ bus.BusNo }}</td>
+                    <td>{{ bus.BusName }}</td>
+                    <td>{{ bus.Enumber }}</td>
+                    <td>{{ bus.RouteNo }}</td>
                 </tr>
-                </a>
+            {% endfor %}
             </tbody>
           </table>
         <br><br>
@@ -79,6 +78,7 @@
                 <option>ENo</option>
                 <option>RNo</option>
             </select>
+            </form>
         </div>
         <br>
            

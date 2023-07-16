@@ -12,30 +12,30 @@
   <body>
     <div class="top">
         <div class="hb">
-           <a href="/" class="homeb"> BusManagement</a>
+           <a href="{{ url_for("home_page") }}" class="homeb"> BusManagement</a>
         </div>
         <p class="heading">Users</p>
     </div>
 
     <div class="content">
         <table cellspacing="0px">
-            <tr><th>UserNo.</th><th>Name</th>
-              <th>Age</th><th>Phone</th>
+            <tr><th>UserNo.</th>
+                <th>Name</th>
+              <th>Age</th>
+                <th>Phone</th>
               <th>EMail</th>
-              <th>Password</th>
             </tr>
            
             <tbody class="rows">
+            {% for user in users %}
             <tr>
-              <!-- Example Values -->
-              <td>001</td> <!-- ENo. -->
-              <td>Utkarsh</td> <!-- EName -->
-              <td>26</td> <!-- EAge-->
-              <td>8823192</td> <!-- EPhone -->
-              <td>8823192</td>    
-              <td>8823192</td>       
+              <td>{{ user.userno }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.email }}</td>
             </tr>
-            </a>
+            {% endfor %}
             </tbody>
           </table>
         <br><br><br>

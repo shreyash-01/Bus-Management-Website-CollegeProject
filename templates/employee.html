@@ -29,16 +29,15 @@
            
            
             <tbody class="rows">
-            <a href="">
+            {% for employee in employees %}
             <tr>
               <!-- Example Values -->
-              <td>001</td> <!-- ENo. -->
-              <td>Utkarsh</td> <!-- EName -->
-              <td>26</td> <!-- EAge-->
-              <td>8823192</td> <!-- EPhone -->
+              <td>{{ employee.Eno }}</td> <!-- ENo. -->
+              <td>{{ employee.Ename }}</td> <!-- EName -->
+              <td>{{ employee.Eage }}</td> <!-- EAge-->
+              <td>{{ employee.Ephone }}</td> <!-- EPhone -->
             </tr>
-            </a>
-            
+            {% endfor %}
           </tbody>
           
           
