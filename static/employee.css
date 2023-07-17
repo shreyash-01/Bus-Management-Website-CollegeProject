@@ -85,13 +85,14 @@ td {
 
 
 .enter {
-  position: relative;
+  position: absolute;
   height: 3rem; /* 60px */
   border-radius: 1rem; /* 10px */
   width: 7.5rem; /* 120px */
   background-image: linear-gradient(45deg, #132b39, #18436a, #4758a2, #1f2230);
   background-size: 300%;
-  left: 40rem; /* 325px */
+  left: 38rem;
+  top:7rem;
   margin-top:1rem;
   transition: background-position 1s;
   cursor: pointer;
