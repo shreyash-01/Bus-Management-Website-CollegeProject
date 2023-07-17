@@ -40,8 +40,9 @@
           </table>
         <br><br>
         
-        <button type="submit" class="enter">Enter New Bus</button>
+       
     </div>
+    <button type="submit" class="enter">Enter New Bus</button>
 
     <div class="popup">
       <h2 class="heading2">Enter New Bus Details</h2><br><br><br><br><br>
@@ -78,7 +79,7 @@
                 <option>ENo</option>
                 <option>RNo</option>
             </select>
-            </form>
+           
         </div>
         <br>
            
@@ -180,39 +181,39 @@ $(document).ready(function() {
       };
   });
   $('#updateform').submit(function(e) {
-      e.preventDefault();
-      updatecolumn = $("#list").val();        // send this to server
-      updatevalue = $("#updateinsert").val(); // send this to server
-      console.log(updatecolumn); // reference
-      console.log(updatevalue); // reference
+            e.preventDefault();
+            updatecolumn = $("#list").val();        // send this to server
+            updatevalue = $("#updateinsert").val(); // send this to server
+            console.log(updatecolumn); // reference
+            console.log(updatevalue); // reference
 
-      // Construct the data object to send to the server
-       var data = {
-          updatecolumn: updatecolumn,
-          updatevalue: updatevalue
-      };
+            // Construct the data object to send to the server
+             var data = {
+                updatecolumn: updatecolumn,
+                updatevalue: updatevalue
+            };
 
-      // Send the data to the server using AJAX
-      $.ajax({
-          url: '/update_buslist', // Replace with your server endpoint URL
-          method: 'POST',
-          data: data,
-          success: function(response) {
-          // Handle the server response
-          console.log(response);
+            // Send the data to the server using AJAX
+            $.ajax({
+                url: '/update_employee', // Replace with your server endpoint URL
+                method: 'POST',
+                data: data,
+                success: function(response) {
+                // Handle the server response
+                console.log(response);
 
-          // Optionally perform actions based on the response
-          },
-          error: function(xhr, status, error) {
-          // Handle any errors that occur during the AJAX request
-          console.log('Error:', error);
-          }
-      });
+                // Optionally perform actions based on the response
+                },
+                error: function(xhr, status, error) {
+                // Handle any errors that occur during the AJAX request
+                console.log('Error:', error);
+                }
+            });
 
-      // Hide the popup or perform any other necessary actions
-      $('.popup2').css("animation"," myAnim3 1s ease 0s 1 normal forwards");
-      $('#updateform')[0].reset();
-  });
+            // Hide the popup or perform any other necessary actions
+            $('.popup2').css("animation"," myAnim3 1s ease 0s 1 normal forwards");
+            $('#updateform')[0].reset();
+        });
    
 
   $('#delete').change(function() {

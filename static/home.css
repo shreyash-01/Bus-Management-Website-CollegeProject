@@ -71,7 +71,7 @@ body {
   
   .login {
     height: 2.5rem; /* 40px */
-    background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+    background-image: linear-gradient(to left, #f1eaea, #866369, #0c0c0c 80%);
     background-size: 300%;
     transition: background-position 1s;
     font-size: 1.25rem; /* 20px */
@@ -88,11 +88,12 @@ body {
   
   .login:hover {
     background-position: right;
+    color:#060606;
   }
   
   .signup {
     height: 2.5rem; /* 40px */
-    background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
+    background-image: linear-gradient(to left, #f1eaea, #866369, #0c0c0c 80%);
     background-size: 300%;
     transition: background-position 1s;
     font-size: 1.25rem; /* 20px */
@@ -109,6 +110,8 @@ body {
   
   .signup:hover {
     background-position: right;
+    color:#060606;
+
   }
   
   .first {
@@ -223,20 +226,20 @@ body {
     top:0rem;
     margin-bottom: 0rem;
     height:25rem;
-    width:100%;
+    width:100rem;
     background-image:url("bottom.png");
     background-size: 100rem 25rem;
 }
 .social{
     position:absolute;
-    font-family: 'Ubuntu',cursive;
+    font-family:'Times New Roman', Times, serif;
     font-size: 1rem;
     height:5.4rem;
     color:white;
     position: relative;
     left:15rem;
-    top:15rem;
-    font-size: 1.4rem;
+    top:18rem;
+    font-size: 1.1rem;
 
 }
 .list1{
@@ -251,16 +254,40 @@ body {
     width: 100%;
 
 }
+.list1 a:hover{
+  text-decoration: underline;
+  color:white;
+  font-size: 1rem;
+  
+
+  width: 100%;
+
+}
 .credit{
   position:absolute;
-  font-family: 'Ubuntu',cursive;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1rem;
   height:5.4rem;
   color:white;
   position: relative;
   left:80rem;
-  top:11rem;
+  top:12rem;
   
+
+}
+
+.line1{
+  position: absolute;
+  width:75%;
+  left:11rem;
+  top:17rem;
+
+}
+.line2{
+  position: absolute;
+  width:75%;
+  left:11rem;
+  top:25rem;
 
 }
 
