@@ -50,8 +50,8 @@
    
    
     <div class="popup">
-      <h2 class="timetext">Specify the departure time and please confirm your booking by 
-        clicking on the button</h2>
+      <h2 class="heading3">Specify the details and please confirm your booking</h2>
+        <p class="timetext">Enter the time of departure:</p>
       <select class="time">
         <!-- Here you have to enter the bus timings, below are example values -->
         <option>dsd</option>
@@ -60,6 +60,17 @@
         <option>dsds</option>
 
         </select>
+        <div class="seatselect">
+        <p class="seattext">Enter the seatno:</p>
+        <select class="seatno">
+          <!-- Here you have to enter the seatno, below are example values -->
+          <option>21</option>
+          <option>231</option>
+          <option>231</option> 
+          <option>32</option>
+  
+        </select>
+        </div>
       <button type="submit" class="confirm"><b>Confirm</b></button>
     </div>
 
@@ -71,6 +82,7 @@
     var from;
     var to;
     var time;
+    var seatno;
     $(document).ready(function() {
       $("tr").click(function(){
         $('.popup').css("display","block");
@@ -80,18 +92,32 @@
         from = $(this).find('td:eq(3)').text();
         to = $(this).find('td:eq(4)').text();
       });
+      $(".time").change(function(){
+        time=$(".time").val();
+        console.log(time); //reference
+  
+        $(".popup").animate({
+            height: "18rem"
+          },500);
+        $('.seatselect').fadeIn();
+
+        $('.confirm').fadeIn();
+
+      });
       $(".confirm").click(function(e) {
           e.preventDefault();
             // Retrieve the entered values
-            time=$(".time").val();
+            seatno=$(".seatno").val();
             console.log(time);
-  
+            console.log(seatno);
             // Send this data to the server here
             var data = {
                 busno: busno,
                 busname:busname,
                 from:from,
-                to:to
+                to:to,
+                time:time,
+                seatno:seatno
              };
 
              // Send the data to the server using AJAX
