@@ -27,7 +27,7 @@
 
       <table cellspacing="0px">
         <tr><th>Sl. No</th><th>Bus Number</th>
-          <th>Name</th><th>From</th>
+          <th>Name</th><th>DTime</th><th>From</th>
           <th>To</th>
         </tr>
        
@@ -39,6 +39,7 @@
           <td>1</td> <!-- Serial No. -->
           <td>001</td> <!-- Bus Number -->
           <td>volvo</td> <!-- Bus Name -->
+          <td>9:00am</td><!-- Departure time -->
           <td>bengaluru</td> <!-- From -->
           <td>pondi</td> <!-- To -->
         </tr>
@@ -51,8 +52,8 @@
    
     <div class="popup">
       <h2 class="heading3">Specify the details and please confirm your booking</h2>
-        <p class="timetext">Enter the time of departure:</p>
-      <select class="time">
+        <p class="datetext">Enter the date of departure:</p>
+      <select class="date">
         <!-- Here you have to enter the bus timings, below are example values -->
         <option>dsd</option>
         <option>dsa</option>
@@ -81,7 +82,7 @@
     var busname;
     var from;
     var to;
-    var time;
+    var date;
     var seatno;
     $(document).ready(function() {
       $("tr").click(function(){
@@ -92,15 +93,38 @@
         from = $(this).find('td:eq(3)').text();
         to = $(this).find('td:eq(4)').text();
       });
-      $(".time").change(function(){
-        time=$(".time").val();
-        console.log(time); //reference
-  
-        $(".popup").animate({
-            height: "18rem"
-          },500);
-        $('.seatselect').fadeIn();
+      $(".date").change(function(){
+        date=$(".date").val();
+        console.log(date); //reference
 
+        $.ajax({
+          url: '/get_seats', // Replace with your Flask server endpoint URL to fetch seat data
+          method: 'POST',
+          data: { date: date },
+          success: function(response) {
+              // Handle the server response
+            console.log(response);
+
+            // Populate the seat select dropdown with the received data
+            var seatSelect = $('.seatno');
+            seatSelect.empty();
+            for (var i = 0; i < response.seats.length; i++) {
+              seatSelect.append('<option>' + response.seats[i] + '</option>');
+            }
+
+            // Show the seat select dropdown
+            $(".popup").animate({
+              height: "18rem"
+            },500);
+            seatSelect.fadeIn();
+
+          $('.confirm').fadeIn();
+          },
+          error: function(xhr, status, error) {
+          // Handle any errors that occur during the AJAX request
+          console.log('Error:', error);
+          }
+        });
         $('.confirm').fadeIn();
 
       });
@@ -108,15 +132,15 @@
           e.preventDefault();
             // Retrieve the entered values
             seatno=$(".seatno").val();
-            console.log(time);
-            console.log(seatno);
+            console.log(date);//reference
+            console.log(seatno);//reference
             // Send this data to the server here
             var data = {
                 busno: busno,
                 busname:busname,
                 from:from,
                 to:to,
-                time:time,
+                date:date,
                 seatno:seatno
              };
 
