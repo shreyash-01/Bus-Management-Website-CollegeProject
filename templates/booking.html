@@ -96,12 +96,35 @@
       $(".date").change(function(){
         date=$(".date").val();
         console.log(date); //reference
-  
-        $(".popup").animate({
-            height: "18rem"
-          },500);
-        $('.seatselect').fadeIn();
 
+        $.ajax({
+          url: '/get_seats', // Replace with your Flask server endpoint URL to fetch seat data
+          method: 'POST',
+          data: { date: date },
+          success: function(response) {
+              // Handle the server response
+            console.log(response);
+
+            // Populate the seat select dropdown with the received data
+            var seatSelect = $('.seatno');
+            seatSelect.empty();
+            for (var i = 0; i < response.seats.length; i++) {
+              seatSelect.append('<option>' + response.seats[i] + '</option>');
+            }
+
+            // Show the seat select dropdown
+            $(".popup").animate({
+              height: "18rem"
+            },500);
+            $('.seatselect').fadeIn();
+
+          $('.confirm').fadeIn();
+          },
+          error: function(xhr, status, error) {
+          // Handle any errors that occur during the AJAX request
+          console.log('Error:', error);
+          }
+        });
         $('.confirm').fadeIn();
 
       });
