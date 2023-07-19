@@ -27,7 +27,7 @@
 
       <table cellspacing="0px">
         <tr><th>Sl. No</th><th>Bus Number</th>
-          <th>Name</th><th>From</th>
+          <th>Name</th><th>DTime</th><th>From</th>
           <th>To</th>
         </tr>
        
@@ -39,6 +39,7 @@
           <td>1</td> <!-- Serial No. -->
           <td>001</td> <!-- Bus Number -->
           <td>volvo</td> <!-- Bus Name -->
+          <td>9:00am</td><!-- Departure time -->
           <td>bengaluru</td> <!-- From -->
           <td>pondi</td> <!-- To -->
         </tr>
@@ -51,8 +52,8 @@
    
     <div class="popup">
       <h2 class="heading3">Specify the details and please confirm your booking</h2>
-        <p class="timetext">Enter the time of departure:</p>
-      <select class="time">
+        <p class="datetext">Enter the date of departure:</p>
+      <select class="date">
         <!-- Here you have to enter the bus timings, below are example values -->
         <option>dsd</option>
         <option>dsa</option>
@@ -81,7 +82,7 @@
     var busname;
     var from;
     var to;
-    var time;
+    var date;
     var seatno;
     $(document).ready(function() {
       $("tr").click(function(){
@@ -92,9 +93,9 @@
         from = $(this).find('td:eq(3)').text();
         to = $(this).find('td:eq(4)').text();
       });
-      $(".time").change(function(){
-        time=$(".time").val();
-        console.log(time); //reference
+      $(".date").change(function(){
+        date=$(".date").val();
+        console.log(date); //reference
   
         $(".popup").animate({
             height: "18rem"
@@ -108,15 +109,15 @@
           e.preventDefault();
             // Retrieve the entered values
             seatno=$(".seatno").val();
-            console.log(time);
-            console.log(seatno);
+            console.log(time);//reference
+            console.log(seatno);//reference
             // Send this data to the server here
             var data = {
                 busno: busno,
                 busname:busname,
                 from:from,
                 to:to,
-                time:time,
+                date:date,
                 seatno:seatno
              };
 
