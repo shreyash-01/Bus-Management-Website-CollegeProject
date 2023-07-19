@@ -1,6 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+
 import DummyData
+
 app = Flask(__name__)
+# app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:kaku@localhost/dummy"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+
+db = SQLAlchemy(app)
+
+
+class User(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.String(50), unique=False, nullable=False)
+    age = db.Column(db.Integer, unique=False, nullable=False)
+    phone = db.Column(db.String(10), unique=False, nullable=False)
+    email = db.Column(db.String(40), unique=False, nullable=False)
+    password = db.Column(db.String(20), unique=False, nullable=False)
 
 
 # homepage route
@@ -20,20 +36,33 @@ def bus_routes_page():
     return render_template("busroute.html")
 
 
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login_account():
-    return render_template("login.html")
+    if request.method == "POST":
+        return redirect("/booking")
+    else:
+        return render_template("login.html")
 
 
-@app.route('/signup')
+@app.route('/signup', methods=["GET", "POST"])
 def signup_account():
-    return render_template("signup.html")
+    if request.method == "POST":
+        return redirect("/booking")
+    else:
+        return render_template("signup.html")
 
 
 # admin routes
-@app.route('/admin/login')
+@app.route('/admin/login', methods=["GET", "POST"])
 def admin_login_page():
-    return "this is login page for admin"
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        if username == "admin" and password == "admin":
+            return redirect("/admin")
+        return render_template("adminlogin.html")
+    else:
+        return render_template("adminlogin.html")
 
 
 @app.route('/admin')
