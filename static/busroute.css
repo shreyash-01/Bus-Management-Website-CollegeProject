@@ -28,83 +28,57 @@ body {
   color: aliceblue;
 }
 
-.buttons {
-  position: relative;
-  top: 0.9375rem; /* 15px */
-}
-
-.buttons a {
-  text-decoration: none;
-}
-
-.about {
+.heading {
   position: absolute;
-  height: 3.125rem; /* 50px */
-  width: 8.75rem; /* 140px */
-  text-align: center;
-  left: 31.25rem; /* 500px */
-  font-size: 1.25rem; /* 20px */
-  font-family: 'Times New Roman', Times, serif;
-  color: aliceblue;
-  padding-top: 1.875rem; /* 30px */
+  font-family: 'Ubuntu', cursive;
+  color: white;
+  font-size: 1.875rem; /* 30px */
+  left: 37.5rem; /* 600px */
 }
 
-.about:hover {
-  background-color: #0d0c0c;
-}
-
-.login {
-  height: 2.5rem; /* 40px */
-  background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
-  background-size: 300%;
-  transition: background-position 1s;
-  font-size: 1.25rem; /* 20px */
-  font-family: 'Times New Roman', Times, serif;
-  color: aliceblue;
-  width: 8.75rem; /* 140px */
-  position: absolute;
-  left: 75rem; /* 1200px */
-  top: 1.25rem; /* 20px */
-  cursor: pointer;
-  border-radius: 0.3125rem; /* 5px */
-  border-width: 0;
-}
-
-.login:hover {
-  background-position: right;
-}
-
-.signup {
-  height: 2.5rem; /* 40px */
-  background-image: linear-gradient(to left, #8a5050, #5e0d1a, #2e2123 80%);
-  background-size: 300%;
-  transition: background-position 1s;
-  font-size: 1.25rem; /* 20px */
-  font-family: 'Times New Roman', Times, serif;
-  color: aliceblue;
-  width: 8.75rem; /* 140px */
-  position: absolute;
-  left: 84.375rem; /* 1350px */
-  top: 1.25rem; /* 20px */
-  cursor: pointer;
-  border-radius: 0.3125rem; /* 5px */
-  border-width: 0;
-}
-
-.signup:hover {
-  background-position: right;
-}
-
-.route {
+.content {
   position: absolute;
   top: 12.5rem; /* 200px */
   background-color: aliceblue;
-  height: 31.25rem; /* 500px */
-  width: 50rem; /* 800px */
+  height: auto; /* 600px */
+  width: 70rem; /* 800px */
   border: 0.0625rem solid black; /* 1px */
-  left: 18.75rem; /* 300px */
+  left: 11rem; /* 300px */
+
+  border-radius: 1rem; /* 40px */
+  
+
+}
+
+table {
   text-align: center;
-  border-radius: 2.5rem; /* 40px */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+}
+
+th {
+  width: 62.5rem; /* 1000px */
+  height: 3.125rem; /* 50px */
+  border-bottom: 0.0625rem solid black; /* 1px */
+  font-family: 'Ubuntu', cursive;
+  font-size: 1.25rem; /* 20px */
+}
+
+table a {
+  text-decoration: none;
+}
+
+.rows tr {
+  cursor: pointer;
+  height: 5rem; /* 80px */
+  font-size: 1.0625rem; /* 17px */
+  font-family: 'Ubuntu', cursive;
+}
+
+.rows tr:hover {
+  background-color: #a6a3a3;
+}
+
+td {
+  border: none;
+  margin: 0;
+  padding: 0;
 }
