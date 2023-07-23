@@ -52,6 +52,7 @@
    
     <div class="popup">
       <h2 class="heading3">Specify the details and please confirm your booking</h2>
+      <span class="close-btn">X</span>
         <p class="datetext">Enter the date of departure:</p>
       <select class="date">
         <!-- Here you have to enter the bus timings, below are example values -->
@@ -92,6 +93,9 @@
         busname = $(this).find('td:eq(2)').text();
         from = $(this).find('td:eq(3)').text();
         to = $(this).find('td:eq(4)').text();
+      });
+      $(".close-btn").click(function() {
+          $(".popup").hide();
       });
       $(".date").change(function(){
         date=$(".date").val();
