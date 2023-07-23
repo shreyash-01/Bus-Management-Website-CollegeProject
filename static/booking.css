@@ -96,6 +96,14 @@ body {
     border-bottom-left-radius: 0.3125rem;
     text-align: center;
   }
+  .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    
+  }
 
   .heading3 {
     border-top-left-radius: 1.25rem;

@@ -121,6 +121,14 @@ td {
   font-style: 'Ubuntu', cursive;
   align-items: center;
 }
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
 
 .heading2 {
   border-top-left-radius: 1.25rem;
