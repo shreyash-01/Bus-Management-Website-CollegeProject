@@ -26,31 +26,22 @@
             <tr><th>RouteNo</th><th>From</th>
               <th>To</th>
             </tr>
-           
-           
             <tbody class="rows">
+            {% for route in routes %}
             
-            <tr>
-              <!-- Example Values -->
-              <td></td> <!-- RouteNo -->
-              <td></td> <!-- From -->
-              <td></td> <!-- To-->
-          
-            </tr>
-           
-          </tbody>
-          
-          
+             <tr>
+               <td>{{ route.routeno }}</td>
+               <td>{{ route.from }}</td>
+               <td>{{ route.to }}</td>
+             </tr>
+            {% endfor %}
+           </tbody>
           </table>
         <br><br>
 
-        
-
-
           <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-          <script>
-          
-          </script>
+
+    </div>
 
     </body>
 </html>
