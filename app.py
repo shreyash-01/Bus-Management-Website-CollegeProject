@@ -6,9 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 import DummyData
 
 app = Flask(__name__)
-# app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:kaku@localhost/dummy"
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://sql6634988:5NwvDdkmqH@sql6.freesqldatabase.com:3306/sql6634988"
-#app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 
 db = SQLAlchemy(app)
 
@@ -36,9 +34,9 @@ class Employee(db.Model):
 
 
 class Ticket(db.Model):
-    ticket_no = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    ticket_amount = db.Column(db.Integer, unique=False, nullable=False)
-    ticket_date = db.Column(db.DateTime, default=datetime.utcnow)
+    TicketNo = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    TAmount = db.Column(db.Integer, unique=False, nullable=False)
+    TDate = db.Column(db.DateTime, default=datetime.utcnow)
     BusNo = db.Column(db.Integer, db.ForeignKey('bus.BusNo'), unique=False, nullable=False)
 
 
@@ -61,9 +59,10 @@ class Route(db.Model):
 
 
 class Schedule(db.Model):
-    schedule_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    dept_time = db.Column(db.String(20), nullable=False)
-    arr_time = db.Column(db.String(20), nullable=False)
+    scheduleid = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    DepartureTime = db.Column(db.String(20), nullable=False)
+    ArrivalTime = db.Column(db.String(20), nullable=False)
+    DepartureDay = db.Column(db.String(20), nullable=False)
     BusNo = db.Column(db.Integer, db.ForeignKey('bus.BusNo'), unique=False, nullable=False)
 
 
@@ -180,19 +179,41 @@ def bus_list_page():
     return render_template("buslist.html", buslist=buslists_data)
 
 
-@app.route('/admin/employees')
+@app.route('/admin/employees', methods=["POST", "GET"])
 def bus_employees_page():
-    employees = Employee.query.all()
-    employees_data = []
-    for employee in employees:
-        employee_data = {
-            "Eno": employee.ENo,
-            "Ename": employee.EName,
-            "Eage": employee.EAge,
-            "Ephone": employee.EPhone
-        }
-        employees_data.append(employee_data)
-    return render_template("employee.html", employees=employees_data)
+    if request.method == "POST":
+        data = request.get_json()
+        input_data = data['input_data']
+        print(input_data)
+        employee = Employee(ENo=input_data['eno'],
+                            EName=input_data['ename'],
+                            EAge=input_data['eage'],
+                            EPhone=input_data['ephone'])
+        db.session.add(employee)
+        db.session.commit()
+        employees = Employee.query.all()
+        employees_data = []
+        for employee in employees:
+            employee_data = {
+                "Eno": employee.ENo,
+                "Ename": employee.EName,
+                "Eage": employee.EAge,
+                "Ephone": employee.EPhone
+            }
+            employees_data.append(employee_data)
+        return render_template("employee.html", employees=employees_data)
+    else :
+        employees = Employee.query.all()
+        employees_data = []
+        for employee in employees:
+            employee_data = {
+                "Eno": employee.ENo,
+                "Ename": employee.EName,
+                "Eage": employee.EAge,
+                "Ephone": employee.EPhone
+            }
+            employees_data.append(employee_data)
+        return render_template("employee.html", employees=employees_data)
 
 
 if __name__ == '__main__':
