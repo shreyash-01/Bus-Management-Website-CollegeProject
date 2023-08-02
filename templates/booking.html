@@ -65,16 +65,19 @@
     var busname;
     var from;
     var to;
+    var date;
+    var departureday;
 
 
     $(document).ready(function() {
       $("tr").click(function(){
         $('.popup').css("display","block");
         $('.popup').css("animation"," myAnim 1s ease 0s 1 normal forwards");
-        busno = $(this).find('td:eq(1)').text();
-        busname = $(this).find('td:eq(2)').text();
-        from = $(this).find('td:eq(3)').text();
-        to = $(this).find('td:eq(4)').text();
+        busno = $(this).find('td:eq(0)').text();
+        busname = $(this).find('td:eq(1)').text();
+        departureday = $(this).find('td:eq(3)').text();
+        from = $(this).find('td:eq(4)').text();
+        to = $(this).find('td:eq(5)').text();
         $('.confirm').fadeIn();
       });
       $(".close-btn").click(function() {
@@ -87,6 +90,7 @@
    
       $(".confirm").click(function(e) {
           e.preventDefault();
+          console.log(to);
             // Retrieve the entered values
             // Send this data to the server here
             var data = {
@@ -94,6 +98,7 @@
                 busname:busname,
                 from:from,
                 to:to,
+                departureday:departureday
                 
   
              };
