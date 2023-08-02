@@ -27,7 +27,7 @@
 
       <table cellspacing="0px">
         <tr><th>Bus Number</th>
-          <th>Name</th><th>DTime</th><th>From</th>
+          <th>Name</th><th>DepartureTime</th><th>Depature Day</th><th>From</th>
           <th>To</th>
         </tr>
        
@@ -35,11 +35,11 @@
         <tbody class="rows">
         <a href="">
         <tr>
-          <!-- Example Values -->
-          <!-- Serial No. -->
+
           <td>001</td> <!-- Bus Number -->
           <td>volvo</td> <!-- Bus Name -->
-          <td>9:00am</td><!-- Departure time -->
+          <td>9:00am</td>
+          <td>wednesday</td>>
           <td>bengaluru</td> <!-- From -->
           <td>pondi</td> <!-- To -->
         </tr>
@@ -51,17 +51,9 @@
    
    
     <div class="popup">
-      <h2 class="heading3">Specify the details and please confirm your booking</h2>
+      <h2 class="heading3">Please confirm your booking</h2>
       <span class="close-btn">X</span>
-        <p class="datetext">Enter the date of departure:</p>
-      <select class="date">
-        <!-- Here you have to enter the bus timings, below are example values -->
-        <option>dsd</option>
-        <option>dsa</option>
-        <option>dsds</option> 
-        <option>dsds</option>
 
-        </select>
 
       <button type="submit" class="confirm"><b>Confirm</b></button>
     </div>
@@ -73,7 +65,7 @@
     var busname;
     var from;
     var to;
-    var date;
+
 
     $(document).ready(function() {
       $("tr").click(function(){
@@ -83,38 +75,32 @@
         busname = $(this).find('td:eq(2)').text();
         from = $(this).find('td:eq(3)').text();
         to = $(this).find('td:eq(4)').text();
+        $('.confirm').fadeIn();
       });
       $(".close-btn").click(function() {
           $(".popup").hide();
       });
-      $(".date").change(function(){
-        date=$(".date").val();
-        console.log(date); //reference
-        $('.confirm').fadeIn();
 
 
         
 
-      });
+   
       $(".confirm").click(function(e) {
           e.preventDefault();
             // Retrieve the entered values
-            seatno=$(".seatno").val();
-            console.log(date);//reference
-            console.log(seatno);//reference
             // Send this data to the server here
             var data = {
                 busno: busno,
                 busname:busname,
                 from:from,
                 to:to,
-                date:date,
+                
   
              };
 
              // Send the data to the server using AJAX
             $.ajax({
-                url: '/delete_employee', // Replace with your server endpoint URL
+                url: '/booking', // Replace with your server endpoint URL
                 method: 'POST',
                 data: data,
                 success: function(response) {
