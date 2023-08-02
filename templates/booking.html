@@ -62,17 +62,7 @@
         <option>dsds</option>
 
         </select>
-        <div class="seatselect">
-        <p class="seattext">Enter the seatno:</p>
-        <select class="seatno">
-          <!-- Here you have to enter the seatno, below are example values -->
-          <option>21</option>
-          <option>231</option>
-          <option>231</option> 
-          <option>32</option>
-  
-        </select>
-        </div>
+
       <button type="submit" class="confirm"><b>Confirm</b></button>
     </div>
 
@@ -100,36 +90,10 @@
       $(".date").change(function(){
         date=$(".date").val();
         console.log(date); //reference
-
-        $.ajax({
-          url: '/get_seats', // Replace with your Flask server endpoint URL to fetch seat data
-          method: 'POST',
-          data: { date: date },
-          success: function(response) {
-              // Handle the server response
-            console.log(response);
-
-            // Populate the seat select dropdown with the received data
-            var seatSelect = $('.seatno');
-            seatSelect.empty();
-            for (var i = 0; i < response.seats.length; i++) {
-              seatSelect.append('<option>' + response.seats[i] + '</option>');
-            }
-
-            // Show the seat select dropdown
-            $(".popup").animate({
-              height: "18rem"
-            },500);
-            seatSelect.fadeIn();
-
-          $('.confirm').fadeIn();
-          },
-          error: function(xhr, status, error) {
-          // Handle any errors that occur during the AJAX request
-          console.log('Error:', error);
-          }
-        });
         $('.confirm').fadeIn();
+
+
+        
 
       });
       $(".confirm").click(function(e) {
