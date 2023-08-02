@@ -108,7 +108,7 @@ td {
 
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 13rem; /* 10px */
   left: 27rem; /* 120px */
   height: 25rem; /* 400px */
@@ -211,7 +211,7 @@ td {
 
 .popup2 {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 13rem; /* 10px */
   left: 27rem; /* 120px */
   height: 10rem; /* 400px */
