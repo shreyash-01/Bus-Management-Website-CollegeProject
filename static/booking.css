@@ -81,7 +81,7 @@ body {
   
   .popup {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: aliceblue;
     margin-top: 0;
     top: 18.75rem; /* 300px */
@@ -117,46 +117,7 @@ body {
     margin-top: 0rem;
     height: 4.5rem;
   }
-  .datetext{
-    position: absolute;
-    left:1rem;
-    top:5rem;
-    color:black;
-    font-family: 'Ubuntu', cursive;
-  }
-  
-  .date {
-    position: absolute;
-    height: 1.875rem; /* 30px */
-    font-family: 'Ubuntu', cursive;
-    top:8rem;
-    width:10rem;
-    left:1rem;
-  }
-  .seatselect{
-    display:none;
-    position: absolute;
 
-    
-  }
-  .seattext{
-    font-family: 'Ubuntu', cursive;
-    position: absolute;
-    width: 8rem;
-    
-    left:1rem;
-    top:12rem;
-
-  }
-  .seatno{
-    position: absolute;
-    height: 1.875rem;
-    font-family: 'Ubuntu', cursive;
-    width:10rem;
-    top:15rem;
-    left:1rem;
-
-  }
   
   .confirm {
     display: none;
