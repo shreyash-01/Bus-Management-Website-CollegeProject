@@ -40,7 +40,7 @@ body {
     position: absolute;
     top: 12.5rem; /* 200px */
     left: 9.375rem; /* 150px */
-    height: 37.5rem; /* 600px */
+    height: auto; /* 600px */
     width: 78.125rem; /* 1250px */
     background-color: aliceblue;
     border-radius: 0.3125rem; /* 5px */
