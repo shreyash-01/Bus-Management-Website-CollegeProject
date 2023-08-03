@@ -108,20 +108,46 @@ body {
   .heading3 {
     border-top-left-radius: 1.25rem;
     border-top-right-radius: 1.25rem;
-    position: absolute;
+    position: fixed;
     width:100%;
     text-align: center;
     background-image: linear-gradient(to top left, #727eb5, #1d233e);
     font-family: 'Ubuntu', cursive;
     color: white;
     margin-top: 0rem;
-    height: 4.5rem;
+    height: 4rem;
+  }
+  .email{
+    position:fixed;
+    top:6rem;
+    width:15rem;
+    height:2rem;
+    left:1rem;
+
   }
 
   
   .confirm {
-    display: none;
-    position: absolute;
+
+    position: fixed;
+    bottom: 0.625rem; /* 10px */
+    right: 1.5625rem; /* 25px */
+    font-family: 'Ubuntu', cursive;
+    font-size: 0.9375rem; /* 15px */
+    height: 2.5rem; /* 40px */
+    width: 6.25rem; /* 100px */
+    cursor: pointer;
+  }
+  .confirmmessage{
+    top:5rem;
+    display:none;
+    position:fixed;
+    font-family: 'Ubuntu', cursive;
+
+  }
+  .confirm1 {
+    display:none;
+    position: fixed;
     bottom: 0.625rem; /* 10px */
     right: 1.5625rem; /* 25px */
     font-family: 'Ubuntu', cursive;
