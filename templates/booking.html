@@ -51,11 +51,18 @@
    
    
     <div class="popup">
-      <h2 class="heading3">Please confirm your booking</h2>
+      <h2 class="heading3">Enter your E-Mail</h2>
       <span class="close-btn">X</span>
-
-
+      
+    
+      <input type="text" placeholder="Email" class="email" required>
       <button type="submit" class="confirm"><b>Confirm</b></button>
+
+      <p class="confirmmessage">This is your Email:<br>
+        <p class="confirmemail"></p>
+      </p>
+     
+      <button type="submit" class="confirm1"><b>Confirm Booking</b></button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -67,6 +74,7 @@
     var to;
     var date;
     var departureday;
+    var email;
 
 
     $(document).ready(function() {
@@ -78,19 +86,35 @@
         departureday = $(this).find('td:eq(3)').text();
         from = $(this).find('td:eq(4)').text();
         to = $(this).find('td:eq(5)').text();
-        $('.confirm').fadeIn();
+        $('.popup').fadeIn();
+        
       });
       $(".close-btn").click(function() {
           $(".popup").hide();
+      });
+      
+      
+      $(".confirm").click(function() {
+          email = $('.email').val();
+          $(".popup").animate({
+              height: "18rem"
+          }, 1000);
+          $('.heading3').html('Confirm your Booking');
+          
+          $(".email").hide();
+          $('.confirmemail').html(email);
+          
+          $(".confirmmessage").fadeIn();
+          $(".confirm1").fadeIn();
       });
 
 
         
 
    
-      $(".confirm").click(function(e) {
+      $(".confirm1").click(function(e) {
           e.preventDefault();
-          console.log(to);
+          console.log(email);
             // Retrieve the entered values
             // Send this data to the server here
             var data = {
@@ -98,7 +122,9 @@
                 busname:busname,
                 from:from,
                 to:to,
-                departureday:departureday
+                departureday:departureday,
+                email:email
+
                 
   
              };
