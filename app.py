@@ -1,4 +1,5 @@
 from datetime import datetime
+import random
 
 from flask import Flask, render_template, request, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -10,25 +11,15 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://sql6636979:MXn2jrUKbv@sql6.freesqldatabase.com:3306/sql6636979"
 db = SQLAlchemy(app)
 
+used_numbers = set()
 
+def generate_unique_random_number(length=6):
+    while True:
+        new_number = random.randint(10 ** (length - 1), (10 ** length) - 1)
+        if new_number not in used_numbers:
+            used_numbers.add(new_number)
+            return new_number
 # Database Models
-
-def generate_ticket_pdf(ticket_details, pdf_filename):
-    # Create a PDF using ReportLab
-    c = canvas.Canvas(pdf_filename, pagesize=letter)
-
-    # Assuming you have a dictionary with ticket details
-    # For example, ticket_details = {"name": "John Doe", "seat_number": "A12", "bus_details": "Bus XYZ", ...}
-
-    # Write ticket details to the PDF
-    c.drawString(100, 750, f"Passenger Name: {ticket_details['busno']}")
-    c.drawString(100, 730, f"Seat Number: {ticket_details['busname']}")
-    c.drawString(100, 710, f"Bus Details: {ticket_details['from']}")
-    c.drawString(100, 810, f"Bus Details: {ticket_details['to']}")
-    c.drawString(100, 910, f"Bus Details: {ticket_details['dday']}")
-    # Add more details as needed
-
-    c.save()
 
 
 class User(db.Model):
@@ -38,6 +29,8 @@ class User(db.Model):
     Phone = db.Column(db.String(10), unique=True, nullable=False)
     Email = db.Column(db.String(40), unique=True, nullable=False)
     Password = db.Column(db.String(20), unique=False, nullable=False)
+
+    book = db.relationship('Booking', backref='user')
 
 
 class Employee(db.Model):
@@ -51,9 +44,9 @@ class Employee(db.Model):
 
 
 class Ticket(db.Model):
-    TicketNo = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    TicketNo = db.Column(db.Integer, primary_key=True)
     TAmount = db.Column(db.Integer, unique=False, nullable=False)
-    TDate = db.Column(db.DateTime, default=datetime.utcnow)
+    TDate = db.Column(db.DateTime, default=datetime.utcnow, unique=False)
     BusNo = db.Column(db.Integer, db.ForeignKey('bus.BusNo'), unique=False, nullable=False)
 
     booking = db.relationship('Booking', backref='ticket')
@@ -82,8 +75,8 @@ class Route(db.Model):
 class Booking(db.Model):
     BookingNo = db.Column(db.Integer, primary_key=True, autoincrement=True)
     TicketNo = db.Column(db.Integer, db.ForeignKey('ticket.TicketNo'), unique=False, nullable=False)
+    UserNo = db.Column(db.Integer, db.ForeignKey('user.UserNo'), unique=False, nullable=False)
     BusNo = db.Column(db.Integer, db.ForeignKey('bus.BusNo'), unique=False, nullable=False)
-    TravelDate = db.Column(db.String(20), unique=False, nullable=False)
     ScheduleID = db.Column(db.String(5), db.ForeignKey('schedule.scheduleid'), unique=False, nullable=False)
 
 
@@ -122,7 +115,6 @@ def booking_page():
                 "To": a[5]
             }
             input_data.append(dic)
-            print(dic)
         return render_template("booking.html", data=input_data)
     else:
         data = request.get_json()
@@ -132,16 +124,38 @@ def booking_page():
         from_ = input_data['from']
         to = input_data['to']
         dday = input_data['departureday']
+        email = input_data['email']
         ticket_details = {
             "busno": busno,
             "busname": busname,
             "from": from_,
             "to": to,
             "dday": dday,
-            # Add more details here
+            "email": email,
         }
-        pdf_filename = "shreyash_ticket.pdf"  # You can name the PDF as per your requirement
-        generate_ticket_pdf(ticket_details, pdf_filename)
+        # user details
+        userno = User.query.filter_by(Email=email).first()
+        user = User.query.filter(User.UserNo == userno.UserNo).first()
+
+        # adding in ticket
+        unique_ticket = generate_unique_random_number()
+        ticket = Ticket(TicketNo=unique_ticket, TAmount=1000, BusNo=busno)
+        db.session.add(ticket)
+        db.session.commit()
+
+        # getting scheduleId
+        sid = Schedule.query.filter_by(BusNo=busno, DepartureDay=dday).first()
+        print(sid.scheduleid)
+
+        # adding to booking
+        unique_booking = generate_unique_random_number(7)
+        booking = Booking(BookingNo=unique_booking, UserNo=userno.UserNo,  TicketNo= unique_ticket, BusNo=busno, ScheduleID=sid.scheduleid)
+        db.session.add(booking)
+        db.session.commit()
+
+
+        # unused_tickets = db.session.query(Ticket.TicketNo).outerjoin(Booking, Ticket.TicketNo == Booking.TicketNo).filter(
+        #     Booking.TicketNo.is_(None)).all()
 
         data = db.session.query(Bus.BusNo, Bus.busname, Schedule.DepartureTime, Schedule.DepartureDay,
                                 Route.SourceLocation, Route.DestinationLocation).join(Route).join(Schedule).all()
