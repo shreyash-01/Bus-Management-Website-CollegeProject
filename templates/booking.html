@@ -14,7 +14,7 @@
     <div class="top">
 
         <div class="hb">
-           <a href="/home" class="homeb"> BusManagement</a>
+           <a href="/" class="homeb"> BusManagement</a>
         </div>
 
         <p class="heading">Booking</p>
@@ -133,9 +133,11 @@
 
              // Send the data to the server using AJAX
             $.ajax({
-                url: '/booking', // Replace with your server endpoint URL
+                dataType: "json",
+                url: '/booking',
                 method: 'POST',
-                data: data,
+                data: JSON.stringify({input_data: data}),
+                contentType: 'application/json; charset=utf-8',
                 success: function(response) {
                 // Handle the server response
                 console.log(response);
