@@ -1,0 +1,250 @@
+body {
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  
+  .top {
+    background-image: linear-gradient(to right, #060606, #595252);
+    height: 6.25rem; /* 100px */
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 9999;
+  }
+  
+  .hb {
+    font-family: 'Dancing Script', cursive;
+    color: aliceblue;
+    font-size: 2.5rem; /* 40px */
+    position: absolute;
+    top: 1.25rem; /* 20px */
+    left: 0.625rem; /* 10px */
+  }
+  
+  .hb a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+  .buttons {
+    position: relative;
+    top: 0.9375rem; /* 15px */
+  }
+  
+  .buttons a {
+    text-decoration: none;
+  }
+  
+
+  .busroute {
+    position: absolute;
+    height: 3.125rem; /* 50px */
+    width: 8.75rem; /* 140px */
+    font-size: 1.25rem; /* 20px */
+    left:35rem; /* 640px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 1.875rem; /* 30px */
+  }
+  
+  .busroute:hover {
+    background-color: #0d0c0c;
+  }
+  
+  .login {
+    height: 2.5rem; /* 40px */
+    background-image: linear-gradient(to left, #f1eaea, #866369, #0c0c0c 80%);
+    background-size: 300%;
+    transition: background-position 1s;
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 8.75rem; /* 140px */
+    position: absolute;
+    left: 75rem; /* 1200px */
+    top: 1.25rem; /* 20px */
+    cursor: pointer;
+    border-radius: 0.3125rem; /* 5px */
+    border-width: 0;
+  }
+  
+  .login:hover {
+    background-position: right;
+    color:#060606;
+  }
+  
+  .signup {
+    height: 2.5rem; /* 40px */
+    background-image: linear-gradient(to left, #f1eaea, #866369, #0c0c0c 80%);
+    background-size: 300%;
+    transition: background-position 1s;
+    font-size: 1.25rem; /* 20px */
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    width: 8.75rem; /* 140px */
+    position: absolute;
+    left: 84.375rem; /* 1350px */
+    top: 1.25rem; /* 20px */
+    cursor: pointer;
+    border-radius: 0.3125rem; /* 5px */
+    border-width: 0;
+  }
+  
+  .signup:hover {
+    background-position: right;
+    color:#060606;
+
+  }
+
+.container {
+
+  position: absolute;
+  top:5rem;
+  left:25rem;
+  width:50%;
+  font-family: 'Ubuntu', cursive;
+  text-align: center;
+  font-size:2rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.aboutus {
+  font-size:2rem;
+  width:100%;
+  font-family: 'Ubuntu', cursive;
+  position: absolute;
+  top:10rem;
+  left:3rem;
+  color:black;
+  text-align: center;
+}
+.offer {
+
+
+  position: relative;
+  top:30rem;
+  color:black;
+  text-align: center;
+  list-style-type: none;
+}
+
+.chooseus {
+  opacity: 0;
+
+  position: relative;
+  top:27rem;
+  color:black;
+  text-align: center;
+}
+
+.ourteam {
+  opacity: 0;
+
+  position: relative;
+  top:27rem;
+  color:black;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+ul{
+  list-style-type: none;
+}
+
+.chooseus.myAnim,
+.ourteam.myAnim {
+  animation: myAnim 1s ease-in-out;
+}
+ .offer, .chooseus, .ourteam {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Customize the shadow as per your preference */
+  padding: 20px; /* Adjust the padding as per your preference */
+  border-radius: 8px; /* Add rounded corners to the boxes */
+  background-color: #ffffff; /* Set the background color for the boxes */
+  margin-bottom: 20px; /* Add some spacing between the boxes */
+  
+}
+.bottom{
+
+  position:relative;
+  top:120rem;
+  margin-bottom: 0rem;
+  height:25rem;
+  width:100rem;
+  background-image:url("bottom.png");
+  background-size: 100rem 25rem;
+}
+.social{
+  position:absolute;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 1rem;
+  height:5.4rem;
+  color:white;
+  position: relative;
+  left:15rem;
+  top:18rem;
+  font-size: 1.1rem;
+
+}
+.list1{
+list-style-type: none;
+}
+.list1 a{
+  text-decoration: none;
+  color:white;
+  font-size: 1rem;
+  
+
+  width: 100%;
+
+}
+.list1 a:hover{
+text-decoration: underline;
+color:white;
+font-size: 1rem;
+
+
+width: 100%;
+
+}
+.credit{
+position:absolute;
+font-family: 'Times New Roman', Times, serif;
+font-size: 1rem;
+height:5.4rem;
+color:white;
+position: relative;
+left:80rem;
+top:12rem;
+
+
+}
+
+.line1{
+position: absolute;
+width:75%;
+left:11rem;
+top:17rem;
+
+}
+.line2{
+position: absolute;
+width:75%;
+left:11rem;
+top:25rem;
+}
+
+
+
+@keyframes myAnim {
+	0% {
+		transform: scale(0.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
