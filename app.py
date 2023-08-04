@@ -256,7 +256,7 @@ def users_page():
     return render_template("users.html", users=users_data)
 
 
-@app.route('/admin/buslist', methods=["GET", "POST"])
+@app.route('/admin/buslist', methods=["GET", "POST", "DELETE"])
 def bus_list_page():
     if request.method == "POST":
         data = request.get_json()
@@ -279,6 +279,26 @@ def bus_list_page():
             }
             buslists_data.append(buslist_data)
         return render_template("buslist.html", buslist=buslists_data)
+    elif request.method == "DELETE":
+        data = request.get_json()
+        input_data = data['input_data']
+        bno = input_data['delbno']
+        print(bno)
+        record = Bus.query.get(bno)
+        db.session.delete(record)
+        db.session.commit()
+
+        buslists = Bus.query.all()
+        buslists_data = []
+        for bus in buslists:
+            buslist_data = {
+                "BusNo": bus.BusNo,
+                "BusName": bus.busname,
+                "Enumber": bus.ENo,
+                "RouteNo": bus.RouteNo
+            }
+            buslists_data.append(buslist_data)
+        return render_template("buslist.html", buslist=buslists_data)
     else :
         buslists = Bus.query.all()
         buslists_data = []
@@ -293,7 +313,7 @@ def bus_list_page():
         return render_template("buslist.html", buslist=buslists_data)
 
 
-@app.route('/admin/employees', methods=["POST", "GET"])
+@app.route('/admin/employees', methods=["POST", "GET", "DELETE"])
 def bus_employees_page():
     if request.method == "POST":
         data = request.get_json()
@@ -315,6 +335,25 @@ def bus_employees_page():
             }
             employees_data.append(employee_data)
         return render_template("employee.html", employees=employees_data)
+    elif request.method == "DELETE":
+        data = request.get_json()
+        input_data = data['input_data']
+        eid = input_data['deleno']
+        record = Employee.query.get(eid)
+        db.session.delete(record)
+        db.session.commit()
+
+        employees = Employee.query.all()
+        employees_data = []
+        for employee in employees:
+            employee_data = {
+                "Eno": employee.ENo,
+                "Ename": employee.EName,
+                "Eage": employee.EAge,
+                "Ephone": employee.EPhone
+            }
+            employees_data.append(employee_data)
+        return render_template("employee.html", employees=employees_data)
     else :
         employees = Employee.query.all()
         employees_data = []
@@ -329,9 +368,9 @@ def bus_employees_page():
         return render_template("employee.html", employees=employees_data)
 
 
-@app.route('/booked')
+@app.route('/booking/booked')
 def booked_ticket():
-    return "hello world"
+    return render_template("confirmbooking.html")
 
 
 

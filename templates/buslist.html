@@ -251,9 +251,11 @@ $(document).ready(function() {
 
        // Send the data to the server using AJAX
       $.ajax({
-          url: '/delete_buslist', // Replace with your server endpoint URL
-           method: 'POST',
-          data: data,
+          dataType: "json",
+          url: '/admin/buslist',
+          method: 'DELETE',
+          data: JSON.stringify({input_data: data}),
+          contentType: 'application/json; charset=utf-8',
           success: function(response) {
           // Handle the server response
           console.log(response);
