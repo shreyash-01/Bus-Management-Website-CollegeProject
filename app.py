@@ -8,7 +8,7 @@ from reportlab.pdfgen import canvas
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://sql6636979:MXn2jrUKbv@sql6.freesqldatabase.com:3306/sql6636979"
+app.config["SQLALCHEMY_DATABASE_URI"] = ""
 db = SQLAlchemy(app)
 
 used_numbers = set()
